@@ -4,7 +4,7 @@
 
 # IDE
 /nbproject/
-.idea/
+.idea
 
 # Composer
 composer.phar

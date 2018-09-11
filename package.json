@@ -5,6 +5,10 @@
   "author": "Olivier Guilleux",
   "authorURI": "https://www.olivier-guilleux.com",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oguilleux/webpack-gulp-wordpress-starter-theme.git"
+  },
   "keywords": [
     "wordpress",
     "theme",

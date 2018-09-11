@@ -1,0 +1,5 @@
+{
+  "name": "olibitbucket/blankthemewebpack",
+  "description": "Blank Theme with Gulp and Webpack",
+  "type": "wordpress-theme"
+}

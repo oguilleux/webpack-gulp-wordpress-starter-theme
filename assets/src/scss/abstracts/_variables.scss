@@ -1,0 +1,36 @@
+
+/**
+ * Colors
+ *
+ */
+
+// here the colors
+
+/**
+ * Breakpoint slicer
+ *
+ * @see https://github.com/lolmaus/breakpoint-slicer
+ */
+$slicer-breakpoints-settings: true;
+@if ( $slicer-breakpoints-settings == true ) {
+  $slicer-breakpoints: 0 576px 768px 992px 1200px 1600px;
+  $slicer-breakpoint-names: 'xs' 'sm' 'md' 'lg' 'xl' 'hd';
+  $slicer-anti-overlap-corrections: -1px;
+}
+
+/**
+ * Bootstrap customised
+ *
+ */
+$font-size-base:1.4rem;
+$font-weight-base:300;
+$font-family-base: 'Ubuntu', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$btn-transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+$border-radius:.4rem;
+$primary:blue;
+$btn-box-shadow:none;
+$btn-active-box-shadow:none;
+$btn-focus-box-shadow:none;
+$input-btn-focus-box-shadow:none;
+$input-border-radius:0;
+

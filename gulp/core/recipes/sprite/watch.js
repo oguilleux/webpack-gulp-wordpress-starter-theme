@@ -1,5 +1,4 @@
 var gulp   = require('gulp');
-var watch  = require('gulp-watch');
 
 // config
 var config = require('../../config/sprite');
@@ -12,9 +11,8 @@ var config = require('../../config/sprite');
  * @param done
  */
 module.exports = function (done) {
-	watch(config.paths.watch, function () {
-		gulp.start('sprite:dev');
-	});
+
+	gulp.watch(config.paths.watch, gulp.parallel('sprite:dev'));
 
 	done();
 };

@@ -10,7 +10,7 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 // vendors overrides
-// @import "vendor-overrides/myvendor";
+// @import "vendors/myvendor";
 
 // base
 @import "base/fonts",
@@ -29,7 +29,3 @@
 // pages
 @import "pages/front-page",
         "pages/page";
-
-// template-parts
-// @import "template-parts/mytemplatepart";
-

@@ -2,7 +2,7 @@
 
 ## Under the hood
 
-- [ES6](https://babeljs.io/learn-es2015/) for JavaScript
+- [ES6](https://babeljs.io/learn-es2015/) for JavaScript (transpiling with [Babel](https://babeljs.io/) and linting with [ESLint](https://eslint.org/))
 - [SASS](http://sass-lang.com/) preprocessor for CSS
 - [Breakpoint slicer](https://github.com/lolmaus/breakpoint-slicer/) for faster media queries
 - [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) as CSS framework

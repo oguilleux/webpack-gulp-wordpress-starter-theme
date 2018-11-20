@@ -23,7 +23,7 @@
 		//add_image_size( '1920', 1920, 9999 );
 	}
 	add_action( 'init', '_custom_theme_init_images_size' );
-	
+
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -61,10 +61,18 @@
 	function dequeue_jquery_migrate( &$scripts){
 		if(!is_admin()){
 			$scripts->remove( 'jquery');
-			// $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+			$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4', true );
 		}
 	}
 	add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
+
+	// force all scripts to load in footer
+	function clean_header() {
+		remove_action('wp_head', 'wp_print_scripts');
+		remove_action('wp_head', 'wp_print_head_scripts', 9);
+		remove_action('wp_head', 'wp_enqueue_scripts', 1);
+	}
+	add_action('wp_enqueue_scripts', 'clean_header');
 
 	// add SVG to allowed file uploads
 	function add_file_types_to_uploads($file_types){

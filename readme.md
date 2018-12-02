@@ -1,4 +1,4 @@
-# WordPress Gulp and Webpack blank theme
+# WordPress Gulp and Webpack starter theme
 
 ## Under the hood
 

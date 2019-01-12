@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "start": "gulp",
-    "prod": "gulp build",
+    "build": "gulp build",
     "postinstall": "gulp build && echo \"THEME INSTALLED, GOOD TO GO !\""
   },
   "engines": {

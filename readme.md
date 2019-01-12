@@ -27,4 +27,4 @@ Launch your watch for assets with :
 	
 For production sites, create your build with :
 
-	npm run prod
+	npm run build

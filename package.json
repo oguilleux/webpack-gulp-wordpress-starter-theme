@@ -51,7 +51,7 @@
     "gulp-svg-sprite": "1.4.0",
     "gulp-svgmin": "1.2.2",
     "gulp-util": "3.0.7",
-    "lodash": "4.17.10",
+    "lodash": "4.17.11",
     "map-stream": "0.0.6",
     "merge-stream": "1.0.0",
     "node-notifier": "4.5.0",

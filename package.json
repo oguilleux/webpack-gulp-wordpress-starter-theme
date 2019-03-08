@@ -62,12 +62,12 @@
   },
   "dependencies": {
     "babel-polyfill": "6.5.0",
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^4.3.1",
     "breakpoint-sass": "^2.7.1",
     "breakpoint-slicer": "^2.0.0",
     "jquery": "^3.3.1",
     "lazysizes": "1.4.0",
     "picturefill": "3.0.2",
-    "popper.js": "^1.12.9"
+    "popper.js": "^1.14.7"
   }
 }

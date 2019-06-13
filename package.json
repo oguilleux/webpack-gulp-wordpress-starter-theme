@@ -30,7 +30,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-stage-2": "6.24.1",
     "bower-webpack-plugin": "0.1.9",
-    "browser-sync": "2.26.3",
+    "browser-sync": "^2.26.7",
     "del": "2.2.0",
     "eslint": "2.2.0",
     "eslint-config-airbnb": "6.0.2",

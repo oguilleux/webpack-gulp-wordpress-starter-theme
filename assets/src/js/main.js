@@ -1,4 +1,3 @@
-// import 'jquery';
 import GeneralScripts from './_generalScripts';
 
 const App = {
@@ -16,8 +15,6 @@ const App = {
 
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-	$(() => {
-		App.init();
-	});
+$(() => {
+	App.init();
 });

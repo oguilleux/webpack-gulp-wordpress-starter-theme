@@ -49,7 +49,7 @@
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "1.6.0",
     "gulp-svg-sprite": "1.4.0",
-    "gulp-svgmin": "2.1.0",
+    "gulp-svgmin": "2.2.0",
     "gulp-util": "3.0.7",
     "lodash": "4.17.11",
     "map-stream": "0.0.6",

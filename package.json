@@ -54,7 +54,7 @@
     "lodash": "4.17.11",
     "map-stream": "0.0.6",
     "merge-stream": "1.0.0",
-    "node-notifier": "4.5.0",
+    "node-notifier": "5.4.0",
     "vinyl-named": "1.1.0",
     "vinyl-transform": "1.0.0",
     "webpack": "2.7.0",

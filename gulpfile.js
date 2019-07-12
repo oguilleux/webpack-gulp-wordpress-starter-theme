@@ -6,13 +6,14 @@ no-multiple-empty-lines: 0
 */
 
 var gulp  = require('gulp');
-var gutil = require('gulp-util');
+var log = require('fancy-log');
+const c = require('ansi-colors');
 
 // utils
 var lazyQuire      = require('./gulp/core/utils/lazyQuire');
 
 // gulpfile booting message
-gutil.log(gutil.colors.green('Starting to Gulp! Please wait...'));
+log(c.green('Starting Gulp! Please wait...'));
 
 
 /**

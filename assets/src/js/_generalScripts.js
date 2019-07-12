@@ -1,6 +1,5 @@
 
 class General {
-
 	constructor() {
 		this.setupEvents();
 	}
@@ -11,7 +10,6 @@ class General {
 	setupEvents() {
 		// console.log('everything is ok !');
 	}
-
 }
 
 export default General;

@@ -15,7 +15,8 @@
     "Promise": true,
   },
   "rules": {
-    "indent": [2, "tab", {"SwitchCase": 1}],
+    "indent": [2, "tab"],
+    "no-tabs": 0,
     "comma-dangle": 0
   }
 }

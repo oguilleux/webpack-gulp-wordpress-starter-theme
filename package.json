@@ -61,7 +61,7 @@
     "vinyl-named": "1.1.0",
     "vinyl-transform": "1.0.0",
     "webpack": "2.7.0",
-    "webpack-stream": "3.2.0"
+    "webpack-stream": "5.2.1"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",

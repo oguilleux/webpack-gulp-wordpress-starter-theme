@@ -1,4 +1,5 @@
-import GeneralScripts from './_generalScripts';
+import 'babel-polyfill';
+import General from './_generalScripts';
 
 const App = {
 
@@ -7,14 +8,14 @@ const App = {
 	 */
 	init() {
 		// General scripts
-		function initGeneralScripts() {
-			return new GeneralScripts();
+		function initGeneral() {
+			return new General();
 		}
-		initGeneralScripts();
+		initGeneral();
 	}
 
 };
 
-$(() => {
+document.addEventListener('DOMContentLoaded', () => {
 	App.init();
 });

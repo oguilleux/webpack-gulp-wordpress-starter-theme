@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack-stream').webpack;
-var BowerWebpackPlugin = require('bower-webpack-plugin');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // utils
 var deepMerge = require('../utils/deepMerge');
@@ -32,48 +32,33 @@ module.exports = deepMerge({
             // merged with defaults
             // for :watch task
             watch: {
+            	mode: 'development',
                 cache: true,
                 watch: true,
-                devtool: 'eval',
-                keepalive: true
+                devtool: 'eval'
             },
 
 
             // merged with defaults
             // for :dev task
             dev: {
-                devtool: 'eval'
+	            mode: 'development',
+	            devtool: 'eval'
             },
 
 
             // merged with defaults
             // for :prod task
             prod: {
-                plugins: [
-                    new webpack.optimize.DedupePlugin(),
-                    new webpack.optimize.OccurenceOrderPlugin(true),
-                    new webpack.optimize.UglifyJsPlugin({
-                        sourceMap: false,
-                        comments: false,
-                        screw_ie8: true,
-                        compress: {
-                            drop_console: true,
-                            unsafe: true,
-                            unsafe_comps: true,
-                            screw_ie8: true,
-                            warnings: false
-                        }
-                    })
-                ],
-                eslint: {
-                    failOnError: false,
-                    failOnWarning: false
-                }
+	            mode: 'production',
+	            plugins: [
+                    new webpack.optimize.OccurrenceOrderPlugin(true),
+                ]
             },
 
             defaults: {
                 resolve: {
-                    extensions: ['', '.js', '.jsx']
+                    extensions: ['.js', '.jsx']
                 },
                 output: {
                     chunkFilename: 'chunk-[name].js'
@@ -81,52 +66,27 @@ module.exports = deepMerge({
                 stats: {
                     colors: true
                 },
-                module: {
-                    preLoaders: [
-                        {
-                            test: /\.jsx?$/,
-                            exclude: [
-                                /node_modules/,
-                                /bower_components/,
-                                /vendor/,
-                                /polyfills/
-                            ],
-                            loader: 'eslint'
-                        }
-                    ],
-                    loaders: [
-                        {
-                            test: /\.jsx?$/,
-                            exclude: [
-                                /node_modules/,
-                                /bower_components/,
-                                /polyfills/
-                            ],
-                            loader: 'babel',
-                            query: {
-                                presets: ['env', 'stage-2'],
-                                plugins: ['transform-runtime']
-                            }
-                        }
-                    ]
-                },
                 plugins: [
+	                new webpack.LoaderOptionsPlugin({
+		                test: /\.jsx?$/,
+		                exclude: [
+			                /node_modules/,
+			                /bower_components/,
+			                /polyfills/
+		                ],
+		                loader: ['eslint', 'babel'],
+		                query: {
+			                presets: ['env'],
+			                plugins: ['transform-runtime']
+		                }
+					}),
                     new webpack.ProvidePlugin({
                         $: 'jquery',
                         jQuery: 'jquery',
                         'window.jQuery': 'jquery'
-                    }),
-                    new BowerWebpackPlugin({
-                        includes: /\.jsx?$/
                     })
-                ],
-                eslint: {
-                    emitError: true,
-                    emitWarning: false,
-                    configFile: path.resolve('./.eslintrc')
-                }
+                ]
             }
-
         }
     }
 });

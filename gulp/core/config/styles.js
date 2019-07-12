@@ -28,9 +28,9 @@ module.exports = deepMerge({
 	options: {
 		sass: {},
 		autoprefixer: {
-			browsers: [
+			overrideBrowserslist: [
 				'last 2 version',
-				'ie >= 9',
+				'ie >= 11',
 				'IOS >= 7'
 			]
 		},

@@ -50,7 +50,7 @@
     "gulp-plumber": "1.2.1",
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
-    "gulp-svg-sprite": "1.4.0",
+    "gulp-svg-sprite": "1.5.0",
     "gulp-svgmin": "2.2.0",
     "lodash": "4.17.14",
     "map-stream": "0.0.6",

@@ -7,7 +7,7 @@ no-multiple-empty-lines: 0
 
 var gulp  = require('gulp');
 var log = require('fancy-log');
-const c = require('ansi-colors');
+var c = require('ansi-colors');
 
 // utils
 var lazyQuire      = require('./gulp/core/utils/lazyQuire');

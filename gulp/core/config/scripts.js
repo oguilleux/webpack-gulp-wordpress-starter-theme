@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack-stream').webpack;
-var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // utils
 var deepMerge = require('../utils/deepMerge');

@@ -2,7 +2,7 @@ var gulp        = require('gulp');
 var plumber     = require('gulp-plumber');
 var svgSprite   = require('gulp-svg-sprite');
 var svgmin      = require('gulp-svgmin');
-var gutil       = require('gulp-util');
+var log 		= require('fancy-log');
 var path        = require('path');
 var mergeStream = require('merge-stream');
 var notify      = require('gulp-notify');
@@ -29,7 +29,12 @@ function spriteTask(name, src) {
 		.pipe(plumber())
 
 		.pipe(svgSprite(config.options.svgSprite(name)))
-		.on('error', gutil.log)
+		.on('error', function(error) {
+			notify({
+				message: 'Error on Sprite creation'
+			});
+			log.error(error);
+		})
 
 		.pipe(svgmin(config.options.svgmin))
 

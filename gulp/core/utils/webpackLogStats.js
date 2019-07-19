@@ -1,8 +1,9 @@
-var gutil = require('gulp-util');
+var log 	 = require('fancy-log');
+var supportsColor = require('supports-color');
 
 var callingDone = false;
 var defaultStatsOptions = {
-	colors: gutil.colors.supportsColor,
+	colors: supportsColor,
 	hash: false,
 	timings: false,
 	chunks: false,
@@ -41,8 +42,8 @@ module.exports = function (err, stats, options) {
 	}
 
 	if (options.verbose) {
-		gutil.log(stats.toString({
-			colors: gutil.colors.supportsColor
+		log(stats.toString({
+			colors: supportsColor
 		}));
 	} else {
 		var statsOptions = options && options.stats || {};
@@ -53,6 +54,6 @@ module.exports = function (err, stats, options) {
 			}
 		});
 
-		gutil.log(stats.toString(statsOptions));
+		log(stats.toString(statsOptions));
 	}
 };

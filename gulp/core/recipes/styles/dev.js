@@ -28,7 +28,11 @@ module.exports = function (cb) {
 		.pipe(plumber())
 
 		.pipe(sourcemaps.init())
-		.pipe(sass.sync(config.options.sass).on('error', sass.logError))
+		.pipe(sass.sync(config.options.sass))
+		.on('error', function(error) {
+			notify().write(error);
+			this.emit('end');
+		})
 		.pipe(autoprefixer(config.options.autoprefixer))
 		.pipe(sourcemaps.write('./'))
 

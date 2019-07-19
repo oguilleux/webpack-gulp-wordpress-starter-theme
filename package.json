@@ -52,7 +52,7 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-svg-sprite": "1.4.0",
     "gulp-svgmin": "2.2.0",
-    "lodash": "4.17.14",
+    "lodash": "4.17.15",
     "map-stream": "0.0.6",
     "merge-stream": "1.0.0",
     "node-notifier": "5.4.0",

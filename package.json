@@ -53,9 +53,10 @@
     "gulp-svg-sprite": "1.5.0",
     "gulp-svgmin": "2.2.0",
     "lodash": "4.17.15",
-    "map-stream": "0.0.6",
-    "merge-stream": "1.0.0",
+    "map-stream": "0.0.7",
+    "merge-stream": "2.0.0",
     "node-notifier": "5.4.0",
+    "supports-color": "7.0.0",
     "vinyl-named": "1.1.0",
     "vinyl-transform": "1.0.0",
     "webpack": "4.36.1",
@@ -67,7 +68,6 @@
     "breakpoint-sass": "2.7.1",
     "breakpoint-slicer": "2.0.0",
     "jquery": "3.4.1",
-    "popper.js": "1.15.0",
-    "supports-color": "^7.0.0"
+    "popper.js": "1.15.0"
   }
 }

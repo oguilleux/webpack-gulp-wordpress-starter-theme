@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack-stream').webpack;
+var TerserPlugin = require('terser-webpack-plugin');
 
 // utils
 var deepMerge = require('../utils/deepMerge');
@@ -52,7 +53,18 @@ module.exports = deepMerge({
 				mode: 'production',
 				plugins: [
 					new webpack.optimize.OccurrenceOrderPlugin(true),
-				]
+				],
+				optimization: {
+					minimizer: [
+						new TerserPlugin({
+							terserOptions: {
+								output: {
+									comments: false,
+								},
+							},
+						}),
+					]
+				}
 			},
 
 			defaults: {

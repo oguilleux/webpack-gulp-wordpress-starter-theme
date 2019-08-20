@@ -55,7 +55,7 @@
     "lodash": "4.17.15",
     "map-stream": "0.0.7",
     "merge-stream": "2.0.0",
-    "node-notifier": "5.4.0",
+    "node-notifier": "5.4.3",
     "supports-color": "7.0.0",
     "terser-webpack-plugin": "^1.4.1",
     "vinyl-named": "1.1.0",

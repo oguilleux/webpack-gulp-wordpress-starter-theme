@@ -22,7 +22,7 @@ var config       = require('../../config/scripts');
  *
  * @returns {*}
  */
-module.exports = function () {
+module.exports = function (done) {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 
@@ -43,4 +43,6 @@ module.exports = function () {
 		)
 
 		.pipe(gulp.dest(config.paths.dest));
+
+	done();
 };

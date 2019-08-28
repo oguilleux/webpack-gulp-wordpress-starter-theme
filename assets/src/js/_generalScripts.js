@@ -1,14 +1,13 @@
 
 class General {
 	constructor() {
-		this.setupEvents();
+		this.testVariable = 'script working';
+		this.init();
 	}
 
-	/**
-	 * General.setupEvents
-	 */
-	setupEvents() {
-		// console.log('everything is ok !');
+	init() {
+		// for tests purposes only
+		console.log(this.testVariable);
 	}
 }
 

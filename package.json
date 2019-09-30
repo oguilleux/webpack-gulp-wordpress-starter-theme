@@ -57,7 +57,7 @@
     "merge-stream": "2.0.0",
     "node-notifier": "5.4.3",
     "supports-color": "7.0.0",
-    "terser-webpack-plugin": "^1.4.1",
+    "terser-webpack-plugin": "^2.1.2",
     "vinyl-named": "1.1.0",
     "vinyl-transform": "1.0.0",
     "webpack": "4.39.3",

@@ -60,7 +60,7 @@
     "terser-webpack-plugin": "2.1.2",
     "vinyl-named": "1.1.0",
     "vinyl-transform": "1.0.0",
-    "webpack": "4.41.0",
+    "webpack": "4.41.1",
     "webpack-stream": "5.2.1"
   },
   "dependencies": {

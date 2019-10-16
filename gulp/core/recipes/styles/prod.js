@@ -1,8 +1,9 @@
 var gulp         = require('gulp');
 var plumber      = require('gulp-plumber');
 var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var minify       = require('gulp-cssnano');
+var autoprefixer = require('autoprefixer');
+var cssnano      = require('cssnano');
+var postcss      = require('gulp-postcss');
 var notify       = require('gulp-notify');
 
 // utils
@@ -11,6 +12,10 @@ var pumped       = require('../../utils/pumped');
 // config
 var config       = require('../../config/styles');
 
+var plugins = [
+	autoprefixer(config.options.autoprefixer),
+	cssnano(config.options.minify)
+];
 
 /**
  * Compile SCSS to CSS
@@ -22,9 +27,8 @@ module.exports = function () {
 		.pipe(plumber())
 
 		.pipe(sass.sync(config.options.sass).on('error', sass.logError))
-		.pipe(autoprefixer(config.options.autoprefixer))
 
-		.pipe(minify(config.options.minify))
+		.pipe(postcss(plugins))
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({

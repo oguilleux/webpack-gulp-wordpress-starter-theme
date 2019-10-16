@@ -35,8 +35,12 @@ module.exports = deepMerge({
 			]
 		},
 		minify: {
-			autoprefixer: false,
-			discardComments: { removeAll: true }
+			preset: [
+				'default',
+				{
+					discardComments: { removeAll: true }
+				}
+			]
 		}
 	}
 });

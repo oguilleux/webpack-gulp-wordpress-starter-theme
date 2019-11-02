@@ -55,6 +55,7 @@ module.exports = deepMerge({
 					new webpack.optimize.OccurrenceOrderPlugin(true),
 				],
 				optimization: {
+					minimize: true,
 					minimizer: [
 						new TerserPlugin({
 							terserOptions: {
@@ -62,6 +63,7 @@ module.exports = deepMerge({
 									comments: false,
 								},
 							},
+							extractComments: false,
 						}),
 					]
 				}

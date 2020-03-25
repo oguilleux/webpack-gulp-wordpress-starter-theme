@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "ansi-colors": "4.1.1",
-    "autoprefixer": "9.7.4",
+    "autoprefixer": "9.7.5",
     "babel-core": "6.26.3",
     "babel-eslint": "10.1.0",
     "babel-loader": "7.1.5",
@@ -61,7 +61,7 @@
     "supports-color": "7.1.0",
     "terser-webpack-plugin": "2.3.5",
     "vinyl-named": "1.1.0",
-    "webpack": "4.42.0",
+    "webpack": "4.42.1",
     "webpack-stream": "5.2.1"
   },
   "dependencies": {

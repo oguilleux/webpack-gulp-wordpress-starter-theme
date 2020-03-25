@@ -12,7 +12,7 @@
     "es6": true
   },
   "globals": {
-    "Promise": true,
+    "Promise": true
   },
   "rules": {
     "indent": [2, "tab"],

@@ -1,28 +1,28 @@
 <?php
 
-	// Utilities
+// Utilities
 
-	include( 'configure/utilities.php' );
+include( 'configure/utilities.php' );
 
-	// CONFIG
+// CONFIG
 
-	include( 'configure/configure.php' );
+include( 'configure/configure.php' );
 
-	// JAVASCRIPT & CSS
+// JAVASCRIPT & CSS
 
-	include( 'configure/js-css.php' );
+include( 'configure/js-css.php' );
 
-	// SHORTCODES
+// SHORTCODES
 
-	include( 'configure/shortcodes.php' );
+include( 'configure/shortcodes.php' );
 
-	// ACF
+// ACF
 
-	include( 'configure/acf.php' );
+include( 'configure/acf.php' );
 
-	// HOOKS ADMIN
+// HOOKS ADMIN
 
-	if( is_admin() )
-	{
-		include( 'configure/admin.php' );
-	}
+if( is_admin() )
+{
+	include( 'configure/admin.php' );
+}

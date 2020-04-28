@@ -69,7 +69,7 @@
     "bootstrap": "4.4.1",
     "breakpoint-sass": "2.7.1",
     "breakpoint-slicer": "2.0.0",
-    "jquery": "3.5.0",
+    "jquery": "3.4.1",
     "popper.js": "1.16.1"
   }
 }

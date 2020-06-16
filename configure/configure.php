@@ -12,14 +12,6 @@ function _custom_theme_register_menu()
 }
 add_action( 'init', '_custom_theme_register_menu' );
 
-// CUSTOM IMAGE SIZES
-function _custom_theme_init_images_size()
-{
-	// add_image_size( '424x424', 424, 424, true );
-	// add_image_size( '1920', 1920, 9999 );
-}
-add_action( 'init', '_custom_theme_init_images_size' );
-
 function custom_setup() {
 	// IMAGES
 	add_theme_support( 'post-thumbnails' );
@@ -32,6 +24,10 @@ function custom_setup() {
 
 	// HTML 5 - Example : deletes type="*" in scripts and style tags
 	add_theme_support( 'html5', [ 'script', 'style' ] );
+
+	// CUSTOM IMAGE SIZES
+	// add_image_size( '424x424', 424, 424, true );
+	// add_image_size( '1920', 1920, 9999 );
 }
 add_action('after_setup_theme', 'custom_setup');
 
@@ -84,3 +80,6 @@ function add_file_types_to_uploads($mime_types){
 	return $mime_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads', 1, 1);
+
+// disabling big image sizes scaled
+add_filter( 'big_image_size_threshold', '__return_false' );

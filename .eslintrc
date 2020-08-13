@@ -19,6 +19,7 @@
     "no-tabs": 0,
     "comma-dangle": 0,
     "no-underscore-dangle": [2, { "allow": ["_this"] }],
-    "no-param-reassign": [2, { "props": false }]
+    "no-param-reassign": [2, { "props": false }],
+    "no-multiple-empty-lines": 0
   }
 }

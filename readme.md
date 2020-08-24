@@ -7,6 +7,7 @@
 - [Breakpoint slicer](https://github.com/lolmaus/breakpoint-slicer/) to write faster media queries
 - [Bootstrap 4](https://getbootstrap.com/docs/4.3/getting-started/introduction/) as CSS framework ([customizable with SASS](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults))
 - [Gulp 4](https://gulpjs.com/) & [Webpack 4](https://webpack.js.org/) to manage, compile and optimize the theme's asset
+- SVG Sprite : create a folder containing all your SVGs like `assets/src/svg/sprite` and run your watch or build 
 
 ## Requirements
 

@@ -25,11 +25,27 @@ function custom_setup() {
 	// HTML 5 - Example : deletes type="*" in scripts and style tags
 	add_theme_support( 'html5', [ 'script', 'style' ] );
 
+	// REMOVE USELESS WP IMAGE SIZES
+	remove_image_size( '1536x1536' );
+	remove_image_size( '2048x2048' );
+
 	// CUSTOM IMAGE SIZES
 	// add_image_size( '424x424', 424, 424, true );
 	// add_image_size( '1920', 1920, 9999 );
 }
 add_action('after_setup_theme', 'custom_setup');
+
+// remove default image sizes to avoid overcharging server - comment line if you need size
+function remove_default_image_sizes( $sizes) {
+	unset( $sizes['large']);
+	unset( $sizes['medium']);
+	unset( $sizes['medium_large']);
+	return $sizes;
+}
+add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
+
+// disabling big image sizes scaled
+add_filter( 'big_image_size_threshold', '__return_false' );
 
 // Giving credits
 function remove_footer_admin () {
@@ -46,7 +62,6 @@ add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
 // Remove WP Emoji
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
-
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
@@ -80,6 +95,3 @@ function add_file_types_to_uploads($mime_types){
 	return $mime_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads', 1, 1);
-
-// disabling big image sizes scaled
-add_filter( 'big_image_size_threshold', '__return_false' );

@@ -1,5 +1,9 @@
 <?php
 
+// CPT TAXONOMY
+
+include( 'configure/cpt-taxonomy.php' );
+
 // Utilities
 
 include( 'configure/utilities.php' );

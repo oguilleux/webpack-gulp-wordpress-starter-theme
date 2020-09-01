@@ -63,7 +63,7 @@
     "terser-webpack-plugin": "4.1.0",
     "vinyl-named": "1.1.0",
     "webpack": "4.44.1",
-    "webpack-stream": "6.0.0"
+    "webpack-stream": "6.1.0"
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",

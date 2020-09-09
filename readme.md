@@ -11,8 +11,8 @@
 
 ## Requirements
 
-* Node
-* Gulp
+* [Node](https://nodejs.org/)
+* [Gulp](https://gulpjs.com/docs/en/getting-started/quick-start)
 
 ## Usage
 

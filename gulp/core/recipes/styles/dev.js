@@ -3,15 +3,21 @@ var filter       = require('gulp-filter');
 var plumber      = require('gulp-plumber');
 var sourcemaps   = require('gulp-sourcemaps');
 var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
 var notify       = require('gulp-notify');
 var browserSync  = require('browser-sync');
+var autoprefixer = require('autoprefixer');
+var postcss      = require('gulp-postcss');
+
+// config
+var config       = require('../../config/styles');
 
 // utils
 var pumped       = require('../../utils/pumped');
 
-// config
-var config       = require('../../config/styles.js');
+// postcss
+var plugins = [
+	autoprefixer(config.options.autoprefixer)
+];
 
 /**
  * Compile SCSS to CSS,
@@ -33,20 +39,20 @@ module.exports = function (cb) {
 			notify().write(error);
 			this.emit('end');
 		})
-		.pipe(autoprefixer(config.options.autoprefixer))
+		.pipe(postcss(plugins))
 		.pipe(sourcemaps.write('./'))
 
 		.pipe(gulp.dest(config.paths.dest))
 
 		.pipe(filterCSS) // sourcemaps adds `.map` files to the gulp
-		                 // stream, but we only want to trigger
-		                 // Browser-sync on CSS files so we need to
-		                 // filter the stream for the css files
+						 // stream, but we only want to trigger
+						 // Browser-sync on CSS files so we need to
+						 // filter the stream for the css files
 		.pipe(browserSync.reload({ stream: true }))
 		.pipe(filterCSS.restore)
 
 		.pipe(notify({
 			message: pumped('Your SCSS is Compiled.'),
 			onLast: true
-    }));
+		}));
 };

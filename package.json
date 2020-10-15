@@ -20,16 +20,17 @@
     "postinstall": "gulp build && echo \"THEME INSTALLED, GOOD TO GO !\""
   },
   "engines": {
-    "node": ">=5.0.0"
+    "node": ">=6.0.0"
   },
   "devDependencies": {
+    "@babel/core": "7.12.0",
+    "@babel/plugin-transform-modules-commonjs": "7.10.4",
+    "@babel/plugin-transform-runtime": "7.12.0",
+    "@babel/preset-env": "7.12.0",
     "ansi-colors": "4.1.1",
     "autoprefixer": "10.0.1",
-    "babel-core": "6.26.3",
     "babel-eslint": "10.1.0",
-    "babel-loader": "7.1.5",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.7.0",
+    "babel-loader": "8.1.0",
     "browser-sync": "2.26.12",
     "cssnano": "4.1.10",
     "del": "6.0.0",
@@ -66,7 +67,7 @@
     "webpack-stream": "6.1.0"
   },
   "dependencies": {
-    "babel-polyfill": "6.26.0",
+    "@babel/polyfill": "7.11.5",
     "bootstrap": "4.5.3",
     "breakpoint-sass": "2.7.1",
     "breakpoint-slicer": "2.0.0",

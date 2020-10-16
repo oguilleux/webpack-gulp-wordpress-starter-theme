@@ -67,7 +67,7 @@
     "webpack-stream": "6.1.0"
   },
   "dependencies": {
-    "@babel/polyfill": "7.11.5",
+    "@babel/polyfill": "7.12.1",
     "bootstrap": "4.5.3",
     "breakpoint-sass": "2.7.1",
     "breakpoint-slicer": "2.0.0",

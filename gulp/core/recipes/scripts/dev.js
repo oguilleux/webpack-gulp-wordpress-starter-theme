@@ -1,6 +1,7 @@
 var gulp         = require('gulp');
 var plumber      = require('gulp-plumber');
 var named        = require('vinyl-named');
+var webpack 	 = require('webpack');
 var gulpWebpack  = require('webpack-stream');
 var browserSync  = require('browser-sync');
 
@@ -31,7 +32,7 @@ module.exports = function () {
 			deepMerge(
 				config.options.webpack.defaults,
 				config.options.webpack.dev
-			), null, function (err, stats) {
+			), webpack, function (err, stats) {
 				logStats(err, stats);
 				// reload browser-sync when
 				// a package is updated

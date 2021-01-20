@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.12.1",
-    "bootstrap": "4.5.3",
+    "bootstrap": "4.6.0",
     "breakpoint-sass": "2.7.1",
     "breakpoint-slicer": "2.0.0",
     "jquery": "3.5.1",

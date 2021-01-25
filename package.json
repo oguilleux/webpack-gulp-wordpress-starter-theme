@@ -63,7 +63,7 @@
     "supports-color": "8.1.0",
     "terser-webpack-plugin": "5.1.1",
     "vinyl-named": "1.1.0",
-    "webpack": "5.14.0",
+    "webpack": "5.17.0",
     "webpack-stream": "6.1.1"
   },
   "dependencies": {

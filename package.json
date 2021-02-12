@@ -23,10 +23,10 @@
     "node": ">=6.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.13",
+    "@babel/core": "7.12.16",
     "@babel/plugin-transform-modules-commonjs": "7.12.13",
     "@babel/plugin-transform-runtime": "7.12.15",
-    "@babel/preset-env": "7.12.13",
+    "@babel/preset-env": "7.12.16",
     "ansi-colors": "4.1.1",
     "autoprefixer": "10.2.4",
     "babel-eslint": "10.1.0",
@@ -59,7 +59,7 @@
     "map-stream": "0.0.7",
     "merge-stream": "2.0.0",
     "node-notifier": "9.0.0",
-    "postcss": "8.2.5",
+    "postcss": "8.2.6",
     "supports-color": "8.1.1",
     "terser-webpack-plugin": "5.1.1",
     "vinyl-named": "1.1.0",

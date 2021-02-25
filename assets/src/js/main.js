@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import General from './_generalScripts';
 
 const App = {

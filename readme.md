@@ -1,5 +1,7 @@
 # WordPress Gulp and Webpack starter theme
 
+![](screenshot.png)
+
 ## Under the hood
 
 - [ES6](https://github.com/lukehoban/es6features#readme) for JavaScript (transpiling with [Babel](https://babeljs.io/) and linting with [ESLint](https://eslint.org/))

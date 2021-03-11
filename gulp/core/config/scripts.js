@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack-stream').webpack;
 var TerserPlugin = require('terser-webpack-plugin');
+var ESLintPlugin = require('eslint-webpack-plugin');
 
 // utils
 var deepMerge = require('../utils/deepMerge');
@@ -79,15 +80,6 @@ module.exports = deepMerge({
 				module: {
 					rules: [
 						{
-							enforce: 'pre',
-							test: /\.js$/,
-							exclude: /node_modules/,
-							loader: 'eslint-loader',
-							options: {
-								emitWarning: true
-							}
-						},
-						{
 							test: /\.js$/,
 							exclude: /node_modules/,
 							loader: 'babel-loader',
@@ -102,6 +94,7 @@ module.exports = deepMerge({
 					]
 				},
 				plugins: [
+					new ESLintPlugin(),
 					new webpack.ProvidePlugin({
 						$: 'jquery',
 						jQuery: 'jquery',

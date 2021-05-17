@@ -62,7 +62,7 @@ module.exports = deepMerge({
 								},
 							},
 							extractComments: false,
-						}),
+						})
 					]
 				}
 			},
@@ -94,13 +94,11 @@ module.exports = deepMerge({
 					]
 				},
 				plugins: [
-					new ESLintPlugin(),
-					new webpack.ProvidePlugin({
-						$: 'jquery',
-						jQuery: 'jquery',
-						'window.jQuery': 'jquery'
-					})
-				]
+					new ESLintPlugin()
+				],
+				externals: {
+					jquery: 'jQuery'
+				}
 			}
 		}
 	}

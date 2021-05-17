@@ -15,12 +15,21 @@ var lazyQuire      = require('./gulp/core/utils/lazyQuire');
 // gulpfile booting message
 log(c.green('Starting Gulp! Please wait...'));
 
+// browser sync
+var browserSync = require('browser-sync');
 
 /**
  * Browser
  */
 gulp.task('browser:sync', lazyQuire(require, './gulp/core/recipes/browser-sync'));
 
+/**
+ * PHP
+ */
+gulp.task('php:watch', function() {
+	gulp.watch('*.php', browserSync.reload);
+	gulp.watch('**/*.php', browserSync.reload);
+});
 
 /**
  * Fonts
@@ -84,8 +93,9 @@ gulp.task('default', gulp.parallel(
 	'sprite:watch',
 	'images:watch',
 	'scripts:watch',
-	'styles:watch'
-	//'browser:sync',
+	'styles:watch',
+	'php:watch',
+	'browser:sync'
 	)
 );
 

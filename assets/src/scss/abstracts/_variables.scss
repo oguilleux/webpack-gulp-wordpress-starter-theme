@@ -9,11 +9,12 @@
 /**
  * Bootstrap customised
  *
- * @see https://getbootstrap.com/docs/5.0/customize/sass/#variable-defaults
+ * @see https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
  */
+$font-size-root:62.5%; // 1rem = 10px
 $font-size-base:1.4rem;
 $font-weight-base:400;
-$font-family-base: 'Ubuntu', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: 'Ubuntu', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $btn-transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 $border-radius:.4rem;
 $primary:blue;
@@ -24,7 +25,7 @@ $input-btn-focus-box-shadow:none;
 $input-border-radius:0;
 $grid-columns:12;
 $grid-gutter-width:3rem;
-$body-color: black;
+$body-color:black;
 
 $grid-breakpoints: (
     xs: 0,
@@ -44,6 +45,7 @@ $container-max-widths: (
 );
 
 $spacers : (
+    0: 0,
     1: 1rem,
     2: 2rem,
     3: 3rem,

@@ -62,7 +62,7 @@
     "postcss": "8.2.15",
     "terser-webpack-plugin": "5.1.2",
     "vinyl-named": "1.1.0",
-    "webpack": "5.37.0",
+    "webpack": "5.37.1",
     "webpack-stream": "6.1.2"
   },
   "dependencies": {

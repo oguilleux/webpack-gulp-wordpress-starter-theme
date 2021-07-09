@@ -34,7 +34,7 @@
     "browser-sync": "2.27.4",
     "cssnano": "5.0.6",
     "del": "6.0.0",
-    "eslint": "7.29.0",
+    "eslint": "7.30.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-plugin-babel": "5.3.1",
     "eslint-plugin-import": "2.23.4",
@@ -60,10 +60,10 @@
     "merge-stream": "2.0.0",
     "node-notifier": "10.0.0",
     "postcss": "8.3.5",
-    "sass": "1.35.1",
+    "sass": "1.35.2",
     "terser-webpack-plugin": "5.1.4",
     "vinyl-named": "1.1.0",
-    "webpack": "5.42.0",
+    "webpack": "5.44.0",
     "webpack-stream": "6.1.2"
   },
   "dependencies": {

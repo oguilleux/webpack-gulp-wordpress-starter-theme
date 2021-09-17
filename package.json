@@ -63,7 +63,7 @@
     "sass": "1.41.0",
     "terser-webpack-plugin": "5.2.4",
     "vinyl-named": "1.1.0",
-    "webpack": "5.52.1",
+    "webpack": "5.53.0",
     "webpack-stream": "7.0.0"
   },
   "dependencies": {

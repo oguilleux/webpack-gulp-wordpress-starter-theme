@@ -60,7 +60,7 @@
     "merge-stream": "2.0.0",
     "node-notifier": "10.0.0",
     "postcss": "8.3.6",
-    "sass": "1.41.0",
+    "sass": "1.41.1",
     "terser-webpack-plugin": "5.2.4",
     "vinyl-named": "1.1.0",
     "webpack": "5.52.1",

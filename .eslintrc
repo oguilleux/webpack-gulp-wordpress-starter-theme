@@ -22,5 +22,14 @@
     "no-underscore-dangle": [2, { "allow": ["_this"] }],
     "no-param-reassign": [2, { "props": false }],
     "no-multiple-empty-lines": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["node_modules/", "node_modules/@types"]
+      }
+    }
   }
 }

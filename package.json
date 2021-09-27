@@ -60,7 +60,7 @@
     "map-stream": "0.0.7",
     "merge-stream": "2.0.0",
     "node-notifier": "10.0.0",
-    "postcss": "8.3.7",
+    "postcss": "8.3.8",
     "sass": "1.42.1",
     "terser-webpack-plugin": "5.2.4",
     "vinyl-named": "1.1.0",

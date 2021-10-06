@@ -67,6 +67,6 @@
     "webpack-stream": "7.0.0"
   },
   "dependencies": {
-    "bootstrap": "5.1.1"
+    "bootstrap": "5.1.2"
   }
 }

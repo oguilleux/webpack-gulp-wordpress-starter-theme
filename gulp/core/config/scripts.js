@@ -69,7 +69,7 @@ module.exports = deepMerge({
 
 			defaults: {
 				resolve: {
-					extensions: ['.js', '.jsx']
+					extensions: ['.js', '.jsx', '.ts', '.tsx']
 				},
 				output: {
 					chunkFilename: 'chunk-[name].js'

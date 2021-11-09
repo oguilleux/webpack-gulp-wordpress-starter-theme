@@ -61,7 +61,7 @@
     "node-notifier": "10.0.0",
     "postcss": "8.3.11",
     "sass": "1.43.4",
-    "terser-webpack-plugin": "5.2.4",
+    "terser-webpack-plugin": "5.2.5",
     "vinyl-named": "1.1.0",
     "webpack": "5.61.0",
     "webpack-stream": "7.0.0"

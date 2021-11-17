@@ -94,7 +94,9 @@ module.exports = deepMerge({
 					]
 				},
 				plugins: [
-					new ESLintPlugin()
+					new ESLintPlugin({
+						failOnError: false
+					})
 				],
 				externals: {
 					jquery: 'jQuery'

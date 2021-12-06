@@ -34,7 +34,7 @@
     "browser-sync": "2.27.7",
     "cssnano": "5.0.12",
     "del": "6.0.0",
-    "eslint": "8.3.0",
+    "eslint": "8.4.0",
     "eslint-config-airbnb": "19.0.0",
     "eslint-import-resolver-typescript": "2.5.0",
     "eslint-plugin-babel": "5.3.1",

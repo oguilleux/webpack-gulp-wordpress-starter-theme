@@ -21,8 +21,8 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('Images Moved'),
-			onLast: true
+			"message": pumped("Images Moved"),
+			"onLast": true
 		}))
 
 		.on('end', browserSync.reload);

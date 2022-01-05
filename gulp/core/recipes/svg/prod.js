@@ -24,7 +24,7 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('Svgs Compressed'),
-			onLast: true
+			"message": pumped("Svgs Compressed"),
+			"onLast": true
 		}));
 };

@@ -33,7 +33,7 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('Images Compressed'),
-			onLast: true
+			"message": pumped("Images Compressed"),
+			"onLast": true
 		}));
 };

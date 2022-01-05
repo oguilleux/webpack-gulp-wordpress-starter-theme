@@ -32,7 +32,7 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('SCSS Compiled & Minified.'),
-			onLast: true
+			"message": pumped("SCSS Compiled & Minified."),
+			"onLast": true
 		}));
 };

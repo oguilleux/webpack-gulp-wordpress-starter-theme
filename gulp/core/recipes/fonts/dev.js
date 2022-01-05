@@ -21,8 +21,8 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('Fonts Moved'),
-			onLast: true
+			"message": pumped("Fonts Moved"),
+			"onLast": true
 		}))
 
 		.on('end', browserSync.reload);

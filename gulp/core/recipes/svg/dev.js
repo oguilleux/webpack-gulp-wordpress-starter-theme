@@ -21,8 +21,8 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('Svgs Moved'),
-			onLast: true
+			"message": pumped("Svgs Moved"),
+			"onLast": true
 		}))
 
 		.on('end', browserSync.reload);

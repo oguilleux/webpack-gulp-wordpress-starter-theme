@@ -33,7 +33,7 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('JS Packaged & Minified!'),
-			onLast: true
+			"message": pumped("JS Packaged & Minified!"),
+			"onLast": true
 		}));
 };

@@ -52,7 +52,7 @@ module.exports = function (cb) {
 		.pipe(filterCSS.restore)
 
 		.pipe(notify({
-			message: pumped('Your SCSS is Compiled.'),
-			onLast: true
+			"message": pumped("Your SCSS is Compiled."),
+			"onLast": true
 		}));
 };

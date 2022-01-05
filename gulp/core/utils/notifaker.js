@@ -18,8 +18,8 @@ module.exports = function (message) {
 	);
 
 	notifier.notify({
-		title: 'Gulp notification',
-		message: message,
-		onLast: true
+		"title": "Gulp notification",
+		"message": message,
+		"onLast": true
 	});
 };

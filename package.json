@@ -46,7 +46,6 @@
     "fancy-log": "2.0.0",
     "gulp": "4.0.2",
     "gulp-filter": "7.0.0",
-    "gulp-insert": "0.5.0",
     "gulp-notify": "4.0.0",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "9.0.1",

@@ -1,5 +1,3 @@
-var path = require('path');
-var webpack = require('webpack-stream').webpack;
 var TerserPlugin = require('terser-webpack-plugin');
 var ESLintPlugin = require('eslint-webpack-plugin');
 
@@ -80,16 +78,17 @@ module.exports = deepMerge({
 				module: {
 					rules: [
 						{
-							test: /\.js$/,
+							test: /\.m?js$/,
 							exclude: /node_modules/,
 							loader: 'babel-loader',
 							options: {
 								presets: ['@babel/preset-env'],
-								plugins: [
-									'@babel/plugin-transform-runtime',
-									'@babel/plugin-transform-modules-commonjs'
-								]
+								plugins: ['@babel/plugin-transform-runtime']
 							}
+						},
+						{
+							test: /swiper\.esm\.js/, // force tree shaking for swiper js
+							sideEffects: false
 						}
 					]
 				},

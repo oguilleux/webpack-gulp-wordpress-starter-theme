@@ -74,7 +74,7 @@ add_action( 'wp_footer', 'my_deregister_scripts' );
 function dequeue_jquery_migrate( &$scripts){
 	if(!is_admin()){
 		$scripts->remove( 'jquery');
-		$scripts->add('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', null, null, true );
+		$scripts->add('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', null, null, true );
 	}
 }
 add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );

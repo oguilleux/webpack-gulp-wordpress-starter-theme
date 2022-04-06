@@ -22,9 +22,30 @@ module.exports = deepMerge({
 	options: {
 		svgmin: {
 			multipass: true,
+			full: true,
 			plugins: [
-				{cleanupIDs: false},
-				{removeAttrs: {attrs: 'fill'}}
+				{
+					name: 'cleanupIDs',
+					active: false
+				},
+				{
+					name: 'removeXMLProcInst',
+				},
+				{
+					name: 'removeXMLNS',
+				},
+				{
+					name: 'inlineStyles',
+					param: {
+						onlyMatchedOnce: true
+					}
+				},
+				{
+					name: 'removeAttrs',
+					params: {
+						attrs: 'fill'
+					}
+				}
 			]
 		},
 		svgSprite: function (name) {

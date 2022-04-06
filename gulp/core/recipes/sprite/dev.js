@@ -29,6 +29,7 @@ function spriteTask(name, src) {
 		.pipe(plumber())
 
 		.pipe(svgSprite(config.options.svgSprite(name)))
+
 		.on('error', function(error) {
 			notify({
 				"message": "Error on Sprite creation"

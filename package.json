@@ -32,7 +32,7 @@
     "babel-loader": "8.2.5",
     "browser-sync": "2.27.9",
     "cssnano": "5.1.7",
-    "del": "6.0.0",
+    "del": "6.1.0",
     "eslint": "8.14.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-import-resolver-typescript": "2.7.1",

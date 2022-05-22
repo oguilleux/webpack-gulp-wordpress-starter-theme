@@ -1,8 +1,7 @@
 <?php
 
 // MENUS
-function _custom_theme_register_menu()
-{
+function _custom_theme_register_menu() {
     register_nav_menus(
         array(
             'menu-main' => __( 'Menu principal' ),
@@ -66,7 +65,7 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 // delete wp-embed.js from footer
-function my_deregister_scripts(){
+function my_deregister_scripts() {
 	wp_deregister_script( 'wp-embed' );
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
@@ -75,7 +74,7 @@ add_action( 'wp_footer', 'my_deregister_scripts' );
 function dequeue_jquery_migrate( &$scripts){
 	if(!is_admin()){
 		$scripts->remove( 'jquery');
-		$scripts->add('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', null, null, true );
+		$scripts->add('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', null, null, true );
 	}
 }
 add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
@@ -89,7 +88,7 @@ function clean_header() {
 add_action('wp_enqueue_scripts', 'clean_header');
 
 // add SVG to allowed file uploads
-function add_file_types_to_uploads($mime_types){
+function add_file_types_to_uploads($mime_types) {
 	$mime_types['svg'] = 'image/svg+xml';
 
 	return $mime_types;

@@ -1,6 +1,6 @@
 var gulp         = require('gulp');
 var plumber      = require('gulp-plumber');
-var sass         = require('gulp-sass');
+var sass         = require('gulp-sass')(require('sass'));
 var autoprefixer = require('autoprefixer');
 var cssnano      = require('cssnano');
 var postcss      = require('gulp-postcss');
@@ -32,7 +32,7 @@ module.exports = function () {
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({
-			message: pumped('SCSS Compiled & Minified.'),
-			onLast: true
+			"message": pumped("SCSS Compiled & Minified."),
+			"onLast": true
 		}));
 };

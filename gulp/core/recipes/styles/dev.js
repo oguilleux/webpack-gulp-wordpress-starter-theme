@@ -2,7 +2,7 @@ var gulp         = require('gulp');
 var filter       = require('gulp-filter');
 var plumber      = require('gulp-plumber');
 var sourcemaps   = require('gulp-sourcemaps');
-var sass         = require('gulp-sass');
+var sass         = require('gulp-sass')(require('sass'));
 var notify       = require('gulp-notify');
 var browserSync  = require('browser-sync');
 var autoprefixer = require('autoprefixer');
@@ -52,7 +52,7 @@ module.exports = function (cb) {
 		.pipe(filterCSS.restore)
 
 		.pipe(notify({
-			message: pumped('Your SCSS is Compiled.'),
-			onLast: true
+			"message": pumped("Your SCSS is Compiled."),
+			"onLast": true
 		}));
 };

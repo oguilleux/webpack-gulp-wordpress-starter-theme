@@ -29,9 +29,10 @@ function spriteTask(name, src) {
 		.pipe(plumber())
 
 		.pipe(svgSprite(config.options.svgSprite(name)))
+
 		.on('error', function(error) {
 			notify({
-				message: 'Error on Sprite creation'
+				"message": "Error on Sprite creation"
 			});
 			log.error(error);
 		})
@@ -57,8 +58,8 @@ module.exports = function () {
 
 	return mergeStream(subDirs, root)
 		.pipe(notify({
-			message: pumped('Svg Sprites Generated'),
-			onLast: true
+			"message": pumped("Svg Sprites Generated"),
+			"onLast": true
 		}))
 
 		.on('end', browserSync.reload);

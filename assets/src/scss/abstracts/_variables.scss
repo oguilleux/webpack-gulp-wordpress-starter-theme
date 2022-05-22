@@ -7,25 +7,15 @@
 // here the colors
 
 /**
- * Breakpoint slicer
- *
- * @see https://github.com/lolmaus/breakpoint-slicer
- */
-$slicer-breakpoints-settings: true;
-@if ( $slicer-breakpoints-settings == true ) {
-  $slicer-breakpoints: 0 576px 768px 992px 1200px 1600px;
-  $slicer-breakpoint-names: 'xs' 'sm' 'md' 'lg' 'xl' 'hd';
-  $slicer-anti-overlap-corrections: -1px;
-}
-
-/**
  * Bootstrap customised
  *
- * @see https://getbootstrap.com/docs/4.6/getting-started/theming/#variable-defaults
+ * @see https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
  */
+$font-size-root:62.5%; // 1rem = 10px
 $font-size-base:1.4rem;
-$font-weight-base:300;
-$font-family-base: 'Ubuntu', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$line-height-base: 1.5;
+$font-weight-base:400;
+$font-family-sans-serif: 'Ubuntu', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $btn-transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 $border-radius:.4rem;
 $primary:blue;
@@ -35,8 +25,8 @@ $btn-focus-box-shadow:none;
 $input-btn-focus-box-shadow:none;
 $input-border-radius:0;
 $grid-columns:12;
-$grid-gutter-width:30px;
-$body-color: black;
+$grid-gutter-width:3rem;
+$body-color:black;
 
 $grid-breakpoints: (
     xs: 0,
@@ -44,7 +34,7 @@ $grid-breakpoints: (
     md: 768px,
     lg: 992px,
     xl: 1200px,
-    hd: 1600px
+    xxl: 1400px
 );
 
 $container-max-widths: (
@@ -52,10 +42,11 @@ $container-max-widths: (
     md: 720px,
     lg: 960px,
     xl: 1140px,
-    hd: 1560px,
+    xxl: 1320px
 );
 
 $spacers : (
+    0: 0,
     1: 1rem,
     2: 2rem,
     3: 3rem,
@@ -65,25 +56,5 @@ $spacers : (
     7: 7rem,
     8: 8rem,
     9: 9rem,
-    10: 10rem,
-    11: 11rem,
-    12: 12rem,
-    13: 13rem,
-    14: 14rem,
-    15: 15rem,
-    16: 16rem,
-    17: 17rem,
-    18: 18rem,
-    19: 19rem,
-    20: 20rem,
-    21: 21rem,
-    22: 22rem,
-    23: 23rem,
-    24: 24rem,
-    25: 25rem,
-    26: 26rem,
-    27: 27rem,
-    28: 28rem,
-    29: 29rem,
-    30: 30rem,
+    10: 10rem
 );

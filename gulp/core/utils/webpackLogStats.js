@@ -1,9 +1,6 @@
-var log 	 = require('fancy-log');
-var supportsColor = require('supports-color');
-
+var log 	 	= require('fancy-log');
 var callingDone = false;
 var defaultStatsOptions = {
-	colors: supportsColor,
 	hash: false,
 	timings: false,
 	chunks: false,
@@ -42,9 +39,7 @@ module.exports = function (err, stats, options) {
 	}
 
 	if (options.verbose) {
-		log(stats.toString({
-			colors: supportsColor
-		}));
+		log(stats.toString());
 	} else {
 		var statsOptions = options && options.stats || {};
 

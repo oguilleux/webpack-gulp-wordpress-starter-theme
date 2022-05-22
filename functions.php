@@ -26,7 +26,6 @@ include( 'configure/acf.php' );
 
 // HOOKS ADMIN
 
-if( is_admin() )
-{
+if(is_admin()) {
 	include( 'configure/admin.php' );
 }

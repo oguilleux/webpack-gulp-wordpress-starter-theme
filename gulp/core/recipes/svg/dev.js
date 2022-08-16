@@ -1,21 +1,20 @@
-var gulp         = require('gulp');
-var plumber      = require('gulp-plumber');
-var notify       = require('gulp-notify');
-var browserSync  = require('browser-sync');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+import browserSync from 'browser-sync';
 
 // utils
-var pumped       = require('../../utils/pumped');
+import pumped from '../../utils/pumped';
 
 // config
-var config       = require('../../config/svg');
-
+import config from '../../config/svg';
 
 /**
  * Move Svgs to
  * the built theme
  *
  */
-module.exports = function () {
+export default function () {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 

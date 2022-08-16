@@ -9,7 +9,7 @@ var c 		 = require('ansi-colors');
  *
  * @param message
  */
-module.exports = function (message) {
+export default function (message) {
 
 	log(
 		c.cyan('gulp-notifier'),

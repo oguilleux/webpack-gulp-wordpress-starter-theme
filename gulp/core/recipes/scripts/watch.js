@@ -1,19 +1,18 @@
-var gulp         = require('gulp');
-var plumber      = require('gulp-plumber');
-var named        = require('vinyl-named');
-var webpack 	 = require('webpack');
-var gulpWebpack  = require('webpack-stream');
-var browserSync  = require('browser-sync');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import named from 'vinyl-named';
+import webpack from 'webpack';
+import gulpWebpack from 'webpack-stream';
+import browserSync from 'browser-sync';
 
 // utils
-var deepMerge    = require('../../utils/deepMerge');
-var logStats     = require('../../utils/webpackLogStats');
-var notifaker    = require('../../utils/notifaker');
-var pumped       = require('../../utils/pumped');
+import deepMerge from '../../utils/deepMerge';
+import logStats from '../../utils/webpackLogStats';
+import notifaker from '../../utils/notifaker';
+import pumped from '../../utils/pumped';
 
 // config
-var config       = require('../../config/scripts');
-
+import config from '../../config/scripts';
 
 /**
  * Watch for changes
@@ -23,7 +22,7 @@ var config       = require('../../config/scripts');
  *
  * @returns {*}
  */
-module.exports = function (done) {
+export default function (done) {
 	gulp.src(config.paths.src)
 		.pipe(plumber())
 

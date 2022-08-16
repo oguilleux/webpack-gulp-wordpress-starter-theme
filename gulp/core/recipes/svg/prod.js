@@ -1,14 +1,13 @@
-var gulp         = require('gulp');
-var plumber      = require('gulp-plumber');
-var svgmin       = require('gulp-svgmin');
-var notify       = require('gulp-notify');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import svgmin from 'gulp-svgmin';
+import notify from 'gulp-notify';
 
 // utils
-var pumped       = require('../../utils/pumped');
+import pumped from '../../utils/pumped';
 
 // config
-var config       = require('../../config/svg');
-
+import config from '../../config/svg';
 
 /**
  * Compress Svgs and
@@ -16,7 +15,7 @@ var config       = require('../../config/svg');
  * built theme
  *
  */
-module.exports = function () {
+export default function () {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 

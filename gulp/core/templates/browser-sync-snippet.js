@@ -1,7 +1,7 @@
 var bsConfig = require('../config/browser-sync');
 var port = bsConfig.port || 3000;
 
-module.exports = [
+export default [
 	'\n\n\n',
 	'/**',
 	' * DEVELOPMENT MODE ONLY',

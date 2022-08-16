@@ -1,5 +1,4 @@
-var lodash = require('lodash');
-
+import lodash from 'lodash';
 
 /**
  * Simple lodash wrapper to
@@ -9,7 +8,7 @@ var lodash = require('lodash');
  * @param b
  * @returns {*}
  */
-module.exports = function (a, b) {
+export default function (a, b) {
 	return lodash.mergeWith(a, b, deep);
 };
 

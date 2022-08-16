@@ -1,4 +1,4 @@
-module.exports = function (filename, definitions) {
+export default function (filename, definitions) {
 
 	var preservedDefs = (
 		definitions && definitions.length

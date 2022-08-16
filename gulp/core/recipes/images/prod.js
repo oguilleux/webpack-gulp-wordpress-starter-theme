@@ -1,15 +1,14 @@
-var gulp         = require('gulp');
-var plumber      = require('gulp-plumber');
-var squoosh 	 = require('gulp-squoosh');
-var notify       = require('gulp-notify');
-var path 		 = require('path');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import squoosh from 'gulp-squoosh';
+import notify from 'gulp-notify';
+import path from 'path';
 
 // utils
-var pumped       = require('../../utils/pumped');
+import pumped from '../../utils/pumped';
 
 // config
-var config       = require('../../config/images');
-
+import config from '../../config/images';
 
 /**
  * Compress Images and
@@ -17,7 +16,7 @@ var config       = require('../../config/images');
  * built theme
  *
  */
-module.exports = function () {
+export default function () {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 

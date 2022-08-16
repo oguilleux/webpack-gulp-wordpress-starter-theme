@@ -1,8 +1,7 @@
-var gulp   = require('gulp');
+import gulp from 'gulp';
 
 // config
-var config = require('../../config/sprite');
-
+import config from'../../config/sprite';
 
 /**
  * Watch svg sprite files
@@ -10,9 +9,7 @@ var config = require('../../config/sprite');
  *
  * @param done
  */
-module.exports = function (done) {
-
+export default function (done) {
 	gulp.watch(config.paths.watch, gulp.parallel('sprite:dev'));
-
 	done();
 };

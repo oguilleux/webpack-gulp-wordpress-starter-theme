@@ -9,7 +9,7 @@ var path = require('path');
  * @param dir
  * @returns Array
  */
-module.exports = function getFolders(dir) {
+export default function getFolders(dir) {
 	try {
 		return fs.readdirSync(dir).filter(function (file) {
 			return fs.statSync(path.join(dir, file)).isDirectory();

@@ -109,12 +109,12 @@ function extractNestedConfig(scripts, script) {
  *      {package: 'lodash', global: '_'}
  *    ]);
  *
- *    module.exports = provideLibs();
+ *    export default provideLibs();
  *
  * @param scripts array
  * @returns {Function}
  */
-module.exports = function provideScripts(scripts) {
+export default function provideScripts(scripts) {
 	scripts = scripts || [];
 
 	var validScripts = scripts

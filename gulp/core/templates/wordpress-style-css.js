@@ -28,7 +28,7 @@ for (var optionKey in possibleOptions) {
 }
 
 
-module.exports = [
+export default [
 	'/**',
 	options.join('\n'),
 	' *',

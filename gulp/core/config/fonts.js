@@ -1,8 +1,8 @@
 // utils
-var deepMerge = require('../utils/deepMerge');
+import deepMerge from '../utils/deepMerge';
 
 // config
-var assets = require('./common').paths.assets;
+import assets from './common';
 
 /**
  * Font Building
@@ -11,7 +11,7 @@ var assets = require('./common').paths.assets;
  *
  * @type {{}}
  */
-module.exports = deepMerge({
+export default deepMerge({
 	paths: {
 		watch: assets.src  + '/fonts/**/*.{eot,otf,ttf,woff,woff2,svg}',
 		src:   assets.src  + '/fonts/**/*.{eot,otf,ttf,woff,woff2,svg}',

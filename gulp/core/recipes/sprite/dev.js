@@ -1,20 +1,19 @@
-var gulp        = require('gulp');
-var plumber     = require('gulp-plumber');
-var svgSprite   = require('gulp-svg-sprite');
-var svgmin      = require('gulp-svgmin');
-var log 		= require('fancy-log');
-var path        = require('path');
-var mergeStream = require('merge-stream');
-var notify      = require('gulp-notify');
-var browserSync = require('browser-sync');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import svgSprite from'gulp-svg-sprite';
+import svgmin from'gulp-svgmin';
+import log from 'fancy-log';
+import path from'path';
+import mergeStream from 'merge-stream';
+import notify from'gulp-notify';
+import browserSync from 'browser-sync';
 
 // utils
-var getFolders  = require('../../utils/getFolders');
-var pumped      = require('../../utils/pumped');
+import getFolders from '../../utils/getFolders';
+import pumped from '../../utils/pumped';
 
 // config
-var config      = require('../../config/sprite');
-
+import config from'../../config/sprite';
 
 /**
  * Create single svg sprite given
@@ -49,7 +48,7 @@ function spriteTask(name, src) {
  * templates
  *
  */
-module.exports = function () {
+export default function () {
 	var subDirs = getFolders(config.paths.src).map(function (folder) {
 		return spriteTask(folder, path.join(config.paths.src, folder, '/**/*.svg'));
 	});

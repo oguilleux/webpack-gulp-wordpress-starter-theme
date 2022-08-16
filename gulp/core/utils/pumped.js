@@ -6,7 +6,7 @@
  *
  * @param achievement
  */
-module.exports = function (achievement) {
+export default function (achievement) {
 	var exclamations = [
 		'Sweet',
 		'Awesome',

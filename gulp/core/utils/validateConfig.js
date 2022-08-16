@@ -8,7 +8,7 @@ var c 		 = require('ansi-colors');
  *
  * @param project
  */
-module.exports = function (project) {
+export default function (project) {
 	var validationFailed = false;
 
 

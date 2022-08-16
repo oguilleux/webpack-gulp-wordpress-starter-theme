@@ -7,7 +7,10 @@
  * @param path
  * @returns {Function}
  */
-module.exports = function (require, path) {
+
+
+
+export default function (require, path) {
 	var worker = '';
 
 	return function (a, b, c, d, e, f, g) {

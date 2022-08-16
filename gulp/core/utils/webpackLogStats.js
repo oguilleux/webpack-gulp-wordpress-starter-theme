@@ -22,7 +22,7 @@ var defaultStatsOptions = {
  * @param stats
  * @param options
  */
-module.exports = function (err, stats, options) {
+export default function (err, stats, options) {
 	stats = stats || {};
 	options = options || {};
 

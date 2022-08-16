@@ -1,8 +1,7 @@
-var del = require('del');
+import {deleteAsync} from 'del';
 
 // config
-var config = require('../../config/sprite');
-
+import config from '../../config/sprite';
 
 /**
  * Delete all svg sprites
@@ -10,9 +9,7 @@ var config = require('../../config/sprite');
  * asset directory
  *
  */
-module.exports = function (done) {
-	del(config.paths.clean, {force: true})
-		.then(function () {
-			done();
-		});
+export default function (done) {
+	deleteAsync(config.paths.clean)
+		.then(function () { done(); })
 };

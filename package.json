@@ -50,7 +50,7 @@
     "gulp-postcss": "9.0.1",
     "gulp-sass": "5.1.0",
     "gulp-sourcemaps": "3.0.0",
-    "gulp-squoosh": "0.9.0",
+    "gulp-squoosh": "0.11.0",
     "gulp-svg-sprite": "2.0.0",
     "gulp-svgmin": "4.1.0",
     "lodash": "4.17.21",

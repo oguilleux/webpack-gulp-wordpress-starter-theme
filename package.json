@@ -20,7 +20,8 @@
     "postinstall": "gulp build && echo \"THEME INSTALLED, GOOD TO GO !\""
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",

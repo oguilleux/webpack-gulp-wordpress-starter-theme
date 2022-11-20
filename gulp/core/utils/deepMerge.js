@@ -1,17 +1,4 @@
-var lodash = require('lodash');
-
-
-/**
- * Simple lodash wrapper to
- * deep merge two objects
- *
- * @param a
- * @param b
- * @returns {*}
- */
-module.exports = function (a, b) {
-	return lodash.mergeWith(a, b, deep);
-};
+import lodash from 'lodash';
 
 
 /**
@@ -29,3 +16,15 @@ function deep(a, b) {
 		return a.concat(b);
 	}
 }
+
+/**
+ * Simple lodash wrapper to
+ * deep merge two objects
+ *
+ * @param a
+ * @param b
+ * @returns {*}
+ */
+export default function deepMerge(a, b) {
+	return lodash.mergeWith(a, b, deep);
+};

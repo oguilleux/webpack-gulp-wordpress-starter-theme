@@ -1,5 +1,5 @@
 // utils
-var deepMerge = require('../utils/deepMerge');
+import deepMerge from '../utils/deepMerge.js';
 
 /**
  * BrowserSync
@@ -7,8 +7,10 @@ var deepMerge = require('../utils/deepMerge');
  * object
  *
  */
-module.exports = deepMerge({
+export default function config() {
+	return deepMerge({
 		logSnippet: false,
 		ghostMode: false,
 		open: false
-});
+	});
+}

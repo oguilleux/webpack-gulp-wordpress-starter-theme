@@ -1,8 +1,8 @@
-var gulp   = require('gulp');
+const { watch, parallel } = require('gulp');
 
 // config
-var config = require('../../config/styles');
-
+import config from '../../config/styles.js';
+import stylesDev from '../../recipes/styles/dev.js';
 
 /**
  * Watch style files
@@ -10,9 +10,7 @@ var config = require('../../config/styles');
  *
  * @param done
  */
-module.exports = function (done) {
-
-	gulp.watch(config.paths.watch, gulp.parallel('styles:dev'));
-
+export default function stylesWatch(done) {
+	watch(config.paths.watch, parallel(stylesDev));
 	done();
 };

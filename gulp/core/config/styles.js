@@ -1,8 +1,8 @@
 // utils
-var deepMerge = require('../utils/deepMerge');
+import deepMerge from '../utils/deepMerge.js';
 
 // config
-var assets = require('./common').paths.assets;
+import common from './common.js';
 
 /**
  * Style Building
@@ -11,18 +11,18 @@ var assets = require('./common').paths.assets;
  *
  * @type {{}}
  */
-module.exports = deepMerge({
+export default deepMerge({
 	paths: {
 		watch: [
-			assets.src + '/scss/**/*.scss',
-			'!' + assets.src + '/scss/**/*_tmp\\d+.scss'
+			common.paths.assets.src + '/scss/**/*.scss',
+			'!' + common.paths.assets.src + '/scss/**/*_tmp\\d+.scss'
 		],
 		src:   [
-			assets.src + '/scss/*.scss',
-			'!' + assets.src + '/scss/**/_*'
+			common.paths.assets.src + '/scss/*.scss',
+			'!' + common.paths.assets.src + '/scss/**/_*'
 		],
-		dest:  assets.dest + '/css',
-		clean: assets.dest + '/css/**/*.{css,map}'
+		dest:  common.paths.assets.dest + '/css',
+		clean: common.paths.assets.dest + '/css/**/*.{css,map}'
 	},
 
 	options: {
@@ -43,4 +43,6 @@ module.exports = deepMerge({
 			]
 		}
 	}
-});
+})
+
+

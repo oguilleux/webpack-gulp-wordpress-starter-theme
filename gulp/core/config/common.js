@@ -1,12 +1,12 @@
 // utils
-var deepMerge = require('../utils/deepMerge');
+import deepMerge from '../utils/deepMerge.js';
 
 /**
  * Common config
  * for all tasks
  *
  */
-module.exports = deepMerge({
+export default deepMerge({
 	paths: {
 		assets: {
 			src: 'assets/src',

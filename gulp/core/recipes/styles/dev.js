@@ -1,23 +1,26 @@
-var gulp         = require('gulp');
-var filter       = require('gulp-filter');
-var plumber      = require('gulp-plumber');
-var sourcemaps   = require('gulp-sourcemaps');
-var sass         = require('gulp-sass')(require('sass'));
-var notify       = require('gulp-notify');
-var browserSync  = require('browser-sync');
-var autoprefixer = require('autoprefixer');
-var postcss      = require('gulp-postcss');
+import gulp from 'gulp';
+import filter from 'gulp-filter';
+import plumber from 'gulp-plumber';
+import sourcemaps from 'gulp-sourcemaps';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import notify from 'gulp-notify';
+import browserSync from 'browser-sync';
+import autoprefixer from 'autoprefixer';
+import postcss from 'gulp-postcss';
 
 // config
-var config       = require('../../config/styles');
-
+import config from '../../config/styles.js';
+console.log(config);
 // utils
-var pumped       = require('../../utils/pumped');
+import pumped from '../../utils/pumped.js';
 
 // postcss
-var plugins = [
+const plugins = [
 	autoprefixer(config.options.autoprefixer)
 ];
+
+const sass = gulpSass(dartSass);
 
 /**
  * Compile SCSS to CSS,
@@ -27,8 +30,8 @@ var plugins = [
  *
  *
  */
-module.exports = function (cb) {
-	var filterCSS = filter('**/*.css', { restore: true });
+export default function stylesDev(cb) {
+	const filterCSS = filter('**/*.css', { restore: true });
 
 	return gulp.src(config.paths.src)
 		.pipe(plumber())

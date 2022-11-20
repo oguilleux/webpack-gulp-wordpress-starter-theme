@@ -1,8 +1,7 @@
-var del = require('del');
+import { deleteSync } from 'del';
 
 // config
-var config = require('../../config/svg');
-
+import config from '../../config/svg';
 
 /**
  * Delete all svgs
@@ -10,7 +9,9 @@ var config = require('../../config/svg');
  * asset directory
  *
  */
-module.exports = function (done) {
-	del(config.paths.clean, { force: true })
+function cleanSvg(done) {
+	deleteSync(config.paths.clean, { force: true })
 		.then(function () { done(); });
-};
+}
+
+exports.default = cleanSvg;

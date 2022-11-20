@@ -1,8 +1,7 @@
-var del = require('del');
+import { deleteSync } from 'del';
 
 // config
 var config = require('../../config/sprite');
-
 
 /**
  * Delete all svg sprites
@@ -10,9 +9,9 @@ var config = require('../../config/sprite');
  * asset directory
  *
  */
-module.exports = function (done) {
-	del(config.paths.clean, {force: true})
-		.then(function () {
-			done();
-		});
-};
+function cleanSprite(done) {
+	deleteSync(config.paths.clean, { force: true })
+		.then(function () { done(); });
+}
+
+exports.default = cleanSprite;

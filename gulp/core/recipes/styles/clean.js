@@ -1,8 +1,7 @@
-var del = require('del');
+import { deleteSync } from 'del';
 
 // config
-var config = require('../../config/styles');
-
+import config from '../../config/styles.js';
 
 /**
  * Delete all CSS and SourceMap
@@ -10,7 +9,9 @@ var config = require('../../config/styles');
  * asset directory
  *
  */
-module.exports = function (done) {
-	del(config.paths.clean, { force: true })
+
+
+export default function stylesClean(done) {
+	deleteSync(config.paths.clean, { force: true })
 		.then(function () { done(); });
 };

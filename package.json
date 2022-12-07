@@ -24,7 +24,7 @@
     "npm": ">=8.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.20.2",
+    "@babel/core": "7.20.5",
     "@babel/eslint-parser": "7.19.1",
     "@babel/plugin-transform-runtime": "7.19.6",
     "@babel/preset-env": "7.20.2",
@@ -34,7 +34,7 @@
     "browser-sync": "2.27.10",
     "cssnano": "5.1.14",
     "del": "6.1.1",
-    "eslint": "8.28.0",
+    "eslint": "8.29.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-import-resolver-typescript": "3.5.2",
     "eslint-plugin-babel": "5.3.1",
@@ -59,13 +59,13 @@
     "merge-stream": "2.0.0",
     "node-notifier": "10.0.1",
     "postcss": "8.4.19",
-    "sass": "1.55.0",
+    "sass": "1.56.1",
     "terser-webpack-plugin": "5.3.6",
     "vinyl-named": "1.1.0",
     "webpack": "5.75.0",
     "webpack-stream": "7.0.0"
   },
   "dependencies": {
-    "bootstrap": "5.2.2"
+    "bootstrap": "5.2.3"
   }
 }

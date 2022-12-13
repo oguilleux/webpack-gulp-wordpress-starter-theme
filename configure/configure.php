@@ -12,23 +12,35 @@ function _custom_theme_register_menu() {
 add_action( 'init', '_custom_theme_register_menu' );
 
 function custom_setup() {
-	// IMAGES
-	add_theme_support( 'post-thumbnails' );
+    // Images
+    add_theme_support( 'post-thumbnails' );
 
-	// TITLE TAGS
-	add_theme_support('title-tag');
+    // Title tags
+    add_theme_support('title-tag');
 
-	// LANGUAGES
-	load_theme_textdomain('textdomaintomodify', get_template_directory() . '/languages');
+    // Languages
+    load_theme_textdomain('textdomaintomodify', get_template_directory() . '/languages');
 
-	// HTML 5 - Example : deletes type="*" in scripts and style tags
-	add_theme_support( 'html5', [ 'script', 'style' ] );
+    // HTML 5 - Example : deletes type="*" in scripts and style tags
+    add_theme_support( 'html5', [ 'script', 'style' ] );
 
-	// REMOVE USELESS WP IMAGE SIZES
+    // Remove SVG and global styles
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+    remove_action('wp_body_open', 'wp_global_styles_render_svg_filters' );
+
+    // Remove wp_footer actions which add's global inline styles
+    remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+
+    // Remove render_block filters which adds unnecessary stuff
+    remove_filter('render_block', 'wp_render_duotone_support');
+    remove_filter('render_block', 'wp_restore_group_inner_container');
+    remove_filter('render_block', 'wp_render_layout_support_flag');
+
+	// Remove useless WP image sizes
 	remove_image_size( '1536x1536' );
 	remove_image_size( '2048x2048' );
 
-	// CUSTOM IMAGE SIZES
+	// Custom image sizes
 	// add_image_size( '424x424', 424, 424, true );
 	// add_image_size( '1920', 1920, 9999 );
 }

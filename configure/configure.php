@@ -79,14 +79,6 @@ function dequeue_jquery_migrate( &$scripts){
 }
 add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 
-// force all scripts to load in footer
-function clean_header() {
-	remove_action('wp_head', 'wp_print_scripts');
-	remove_action('wp_head', 'wp_print_head_scripts', 9);
-	remove_action('wp_head', 'wp_enqueue_scripts', 1);
-}
-add_action('wp_enqueue_scripts', 'clean_header');
-
 // add SVG to allowed file uploads
 function add_file_types_to_uploads($mime_types) {
 	$mime_types['svg'] = 'image/svg+xml';

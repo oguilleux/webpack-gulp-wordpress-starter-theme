@@ -99,6 +99,11 @@ module.exports = deepMerge({
 				],
 				externals: {
 					jquery: 'jQuery'
+				},
+				performance: {
+					hints: false,
+					maxEntrypointSize: 512000,
+					maxAssetSize: 512000
 				}
 			}
 		}

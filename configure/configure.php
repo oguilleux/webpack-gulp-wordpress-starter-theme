@@ -94,3 +94,7 @@ function add_file_types_to_uploads($mime_types) {
 	return $mime_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads', 1, 1);
+
+//disable update emails
+add_filter( 'auto_plugin_update_send_email', '__return_false' );
+add_filter( 'auto_theme_update_send_email', '__return_false' );

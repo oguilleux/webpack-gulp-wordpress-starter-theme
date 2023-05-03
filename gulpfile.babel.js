@@ -2,103 +2,88 @@ import gulp from 'gulp';
 import log from 'fancy-log';
 import c from 'ansi-colors';
 
-// utils
-import lazyQuire from './gulp/core/utils/lazyQuire';
+// recipes
+import browserSync from './gulp/core/recipes/browser-sync';
+import fontsClean from './gulp/core/recipes/fonts/clean';
+import fontsDev from './gulp/core/recipes/fonts/dev';
+import fontsProd from './gulp/core/recipes/fonts/prod';
+import fontsWatch from './gulp/core/recipes/fonts/watch';
+import svgClean from './gulp/core/recipes/svg/clean';
+import svgDev from './gulp/core/recipes/svg/dev';
+import svgProd from './gulp/core/recipes/svg/prod';
+import svgWatch from './gulp/core/recipes/svg/watch';
+import spriteClean from './gulp/core/recipes/sprite/clean';
+import spriteDev from './gulp/core/recipes/sprite/dev';
+import spriteProd from './gulp/core/recipes/sprite/prod';
+import spriteWatch from './gulp/core/recipes/sprite/watch';
+import imagesClean from './gulp/core/recipes/images/clean';
+import imagesDev from './gulp/core/recipes/images/dev';
+import imagesProd from './gulp/core/recipes/images/prod';
+import imagesWatch from './gulp/core/recipes/images/watch';
+import scriptsClean from './gulp/core/recipes/scripts/clean';
+import scriptsDev from './gulp/core/recipes/scripts/dev';
+import scriptsProd from './gulp/core/recipes/scripts/prod';
+import scriptsWatch from './gulp/core/recipes/scripts/watch';
+import stylesClean from './gulp/core/recipes/styles/clean';
+import stylesDev from './gulp/core/recipes/styles/dev';
+import stylesProd from './gulp/core/recipes/styles/prod';
+import stylesWatch from './gulp/core/recipes/styles/watch';
 
 // gulpfile booting message
 log(c.green('Starting Gulp! Please wait...'));
 
-
 /**
  * Browser
  */
-gulp.task('browser:sync', lazyQuire(import('./gulp/core/recipes/browser-sync')));
+gulp.task('browser:sync', browserSync);
 
 /**
  * Fonts
  */
-const fonts = {
-	clean: lazyQuire(import('./gulp/core/recipes/fonts/clean')),
-	dev: lazyQuire(import('./gulp/core/recipes/fonts/dev')),
-	prod: lazyQuire(import('./gulp/core/recipes/fonts/prod')),
-	watch: lazyQuire(import('./gulp/core/recipes/fonts/watch'))
-};
-
-gulp.task('fonts:clean', fonts.clean);
-gulp.task('fonts:dev', gulp.series('fonts:clean', fonts.dev));
-gulp.task('fonts:prod', gulp.series('fonts:clean', fonts.prod));
-gulp.task('fonts:watch', gulp.series('fonts:dev', fonts.watch));
+gulp.task('fonts:clean', fontsClean);
+gulp.task('fonts:dev', gulp.series('fonts:clean', fontsDev));
+gulp.task('fonts:prod', gulp.series('fonts:clean', fontsProd));
+gulp.task('fonts:watch', gulp.series('fonts:dev', fontsWatch));
 
 /**
  * Svgs
  */
-const svg = {
-	clean: lazyQuire(import('./gulp/core/recipes/svg/clean')),
-	dev: lazyQuire(import('./gulp/core/recipes/svg/dev')),
-	prod: lazyQuire(import('./gulp/core/recipes/svg/prod')),
-	watch: lazyQuire(import('./gulp/core/recipes/svg/watch'))
-};
-
-gulp.task('svg:clean', svg.clean);
-gulp.task('svg:dev', gulp.series('svg:clean', svg.dev));
-gulp.task('svg:prod', gulp.series('svg:clean', svg.prod));
-gulp.task('svg:watch', gulp.series('svg:dev', svg.watch));
+gulp.task('svg:clean', svgClean);
+gulp.task('svg:dev', gulp.series('svg:clean', svgDev));
+gulp.task('svg:prod', gulp.series('svg:clean', svgProd));
+gulp.task('svg:watch', gulp.series('svg:dev', svgWatch));
 
 /**
  * Svg Sprites
  */
-const sprite = {
-	clean: lazyQuire(import('./gulp/core/recipes/sprite/clean')),
-	dev: lazyQuire(import('./gulp/core/recipes/sprite/dev')),
-	prod: lazyQuire(import('./gulp/core/recipes/sprite/prod')),
-	watch: lazyQuire(import('./gulp/core/recipes/sprite/watch'))
-};
-
-gulp.task('sprite:clean', sprite.clean);
-gulp.task('sprite:dev', gulp.series('sprite:clean', sprite.dev));
-gulp.task('sprite:prod', gulp.series('sprite:clean', sprite.prod));
-gulp.task('sprite:watch', gulp.series('sprite:dev', sprite.watch));
+gulp.task('sprite:clean', spriteClean);
+gulp.task('sprite:dev', gulp.series('sprite:clean', spriteDev));
+gulp.task('sprite:prod', gulp.series('sprite:clean', spriteProd));
+gulp.task('sprite:watch', gulp.series('sprite:dev', spriteWatch));
 
 /**
  * Images
  */
-const images = {
-	clean: lazyQuire(import('./gulp/core/recipes/images/clean')),
-	dev: lazyQuire(import('./gulp/core/recipes/images/dev')),
-	prod: lazyQuire(import('./gulp/core/recipes/images/prod')),
-	watch: lazyQuire(import('./gulp/core/recipes/images/watch'))
-};
-
-gulp.task('images:clean', images.clean);
-gulp.task('images:dev', gulp.series('images:clean', images.dev));
-gulp.task('images:prod', gulp.series('images:clean', images.prod));
-gulp.task('images:watch', gulp.series('images:dev', images.watch));
+gulp.task('images:clean', imagesClean);
+gulp.task('images:dev', gulp.series('images:clean', imagesDev));
+gulp.task('images:prod', gulp.series('images:clean', imagesProd));
+gulp.task('images:watch', gulp.series('images:dev', imagesWatch));
 
 /**
  * Scripts
  */
-const scripts = {
-	clean: lazyQuire(import('./gulp/core/recipes/scripts/clean')),
-	dev: lazyQuire(import('./gulp/core/recipes/scripts/dev')),
-	prod: lazyQuire(import('./gulp/core/recipes/scripts/prod')),
-	watch: lazyQuire(import('./gulp/core/recipes/scripts/watch'))
-};
-gulp.task('scripts:clean', scripts.clean);
-gulp.task('scripts:dev', gulp.series('scripts:clean', scripts.dev));
-gulp.task('scripts:prod', gulp.series('scripts:clean', scripts.prod));
-gulp.task('scripts:watch', gulp.series('scripts:dev', scripts.watch));
+gulp.task('scripts:clean', scriptsClean);
+gulp.task('scripts:dev', gulp.series('scripts:clean', scriptsDev));
+gulp.task('scripts:prod', gulp.series('scripts:clean', scriptsProd));
+gulp.task('scripts:watch', gulp.series('scripts:dev', scriptsWatch));
 
-const styles = {
-	clean: lazyQuire(import('./gulp/core/recipes/styles/clean')),
-	dev: lazyQuire(import('./gulp/core/recipes/styles/dev')),
-	prod: lazyQuire(import('./gulp/core/recipes/styles/prod')),
-	watch: lazyQuire(import('./gulp/core/recipes/styles/watch'))
-};
-
-gulp.task('styles:clean', styles.clean);
-gulp.task('styles:dev', gulp.series('styles:clean', styles.dev));
-gulp.task('styles:prod', gulp.series('styles:clean', styles.prod));
-gulp.task('styles:watch', gulp.series('styles:dev', styles.watch));
+/**
+ * Styles
+ */
+gulp.task('styles:clean', stylesClean);
+gulp.task('styles:dev', gulp.series('styles:clean', stylesDev));
+gulp.task('styles:prod', gulp.series('styles:clean', stylesProd));
+gulp.task('styles:watch', gulp.series('styles:dev', stylesWatch));
 
 /**
  * Grouped

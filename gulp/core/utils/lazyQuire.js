@@ -1,18 +1,18 @@
 /**
  * Return a function that lazily
- * requires a block only when
+ * imports a block only when
  * it is invoked and caches
  * it for future re-use
  *
- * @param path
+ * @param module
  * @returns {Function}
  */
-export default function (require, path) {
+export default function (module) {
 	let worker = '';
 
 	return function (a, b, c, d, e, f, g) {
 		if (!worker) {
-			worker = require(path);
+			worker = module.default;
 		}
 
 		return worker(a, b, c, d, e, f, g);

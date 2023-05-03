@@ -1,5 +1,4 @@
-var lodash = require('lodash');
-
+import lodash from 'lodash';
 
 /**
  * Simple lodash wrapper to
@@ -9,10 +8,9 @@ var lodash = require('lodash');
  * @param b
  * @returns {*}
  */
-module.exports = function (a, b) {
+export default function deepMerge(a, b) {
 	return lodash.mergeWith(a, b, deep);
-};
-
+}
 
 /**
  * Utility for lodash.merge
@@ -24,8 +22,8 @@ module.exports = function (a, b) {
  * @param b
  * @returns {Array.<T>|string}
  */
-function deep(a, b) {
+const deep = (a, b) => {
 	if (lodash.isArray(a) && lodash.isArray(b)) {
 		return a.concat(b);
 	}
-}
+};

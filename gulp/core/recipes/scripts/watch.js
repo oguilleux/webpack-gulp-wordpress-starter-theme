@@ -1,19 +1,16 @@
-var gulp         = require('gulp');
-var plumber      = require('gulp-plumber');
-var named        = require('vinyl-named');
-var webpack 	 = require('webpack');
-var gulpWebpack  = require('webpack-stream');
-var browserSync  = require('browser-sync');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import named from 'vinyl-named';
+import webpack from 'webpack';
+import gulpWebpack from 'webpack-stream';
+import browserSync from 'browser-sync';
 
-// utils
-var deepMerge    = require('../../utils/deepMerge');
-var logStats     = require('../../utils/webpackLogStats');
-var notifaker    = require('../../utils/notifaker');
-var pumped       = require('../../utils/pumped');
+import deepMerge from '../../utils/deepMerge';
+import logStats from '../../utils/webpackLogStats';
+import notifaker from '../../utils/notifaker';
+import pumped from '../../utils/pumped';
 
-// config
-var config       = require('../../config/scripts');
-
+import { paths, options } from '../../config/scripts';
 
 /**
  * Watch for changes
@@ -23,26 +20,16 @@ var config       = require('../../config/scripts');
  *
  * @returns {*}
  */
-module.exports = function (done) {
-	gulp.src(config.paths.src)
+export default function (done) {
+	gulp.src(paths.src)
 		.pipe(plumber())
-
-		.pipe(named()) // vinyl-named is used to allow for
-									 // multiple entry files
-		.pipe(gulpWebpack(
-			deepMerge(
-				config.options.webpack.defaults,
-				config.options.webpack.watch
-			), webpack, function (err, stats) {
-				logStats(err, stats, { watch: true });
-
-				// reload browser-sync when
-				// a package is updated
-				browserSync.reload();
-				notifaker(pumped('JS Packaged'));
-   	 		})
-		)
-		.pipe(gulp.dest(config.paths.dest));
+		.pipe(named())
+		.pipe(gulpWebpack(deepMerge(options.webpack.defaults, options.webpack.watch), webpack, function (err, stats) {
+			logStats(err, stats, { watch: true });
+			browserSync.reload();
+			notifaker(pumped('JS Packaged'));
+		}))
+		.pipe(gulp.dest(paths.dest));
 
 	done();
-};
+}

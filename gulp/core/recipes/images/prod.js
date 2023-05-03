@@ -1,15 +1,14 @@
-var gulp         = require('gulp');
-var plumber      = require('gulp-plumber');
-var squoosh 	 = require('gulp-squoosh');
-var notify       = require('gulp-notify');
-var path 		 = require('path');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import sharpOptimizeImages from "gulp-sharp-optimize-images";
+import notify from 'gulp-notify';
+import path from 'path';
 
 // utils
-var pumped       = require('../../utils/pumped');
+import pumped from '../../utils/pumped';
 
 // config
-var config       = require('../../config/images');
-
+import config from '../../config/images';
 
 /**
  * Compress Images and
@@ -17,18 +16,31 @@ var config       = require('../../config/images');
  * built theme
  *
  */
-module.exports = function () {
+export default function () {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 
 		.pipe(
-			squoosh(({ width, height, size, filePath }) => ({
-				encodeOptions: {
-					...(path.extname(filePath) === ".png"
-						? { oxipng: {} }
-						: { mozjpeg: {} }),
+			sharpOptimizeImages({
+				webp: {
+					quality: 80,
+					lossless: false,
 				},
-			}))
+				avif: {
+					quality: 100,
+					lossless: true,
+					effort: 4,
+				},
+				jpg_to_heif: {
+					quality: 90,
+				},
+				png_to_avif: {},
+
+				jpg_to_jpg: {
+					quality: 80,
+					mozjpeg: true,
+				},
+			})
 		)
 
 		.pipe(gulp.dest(config.paths.dest))

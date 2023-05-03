@@ -1,4 +1,4 @@
-var devTask = require('./dev');
+import devTask from './dev';
 
 /**
  * We are just going to use the
@@ -7,4 +7,4 @@ var devTask = require('./dev');
  *
  * @type {Function}
  */
-module.exports = devTask;
+export default devTask;

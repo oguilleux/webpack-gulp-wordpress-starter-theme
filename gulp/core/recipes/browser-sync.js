@@ -1,7 +1,5 @@
-var browserSync = require('browser-sync');
-
-// config
-var config = require('../config/browser-sync');
+import browserSync from 'browser-sync';
+import config from '../config/browser-sync';
 
 /**
  * Spin up the browser-sync
@@ -10,7 +8,7 @@ var config = require('../config/browser-sync');
  * browser
  *
  */
-module.exports = function (done) {
-  browserSync(config);
-	done();
-};
+export default function startServer(done) {
+    browserSync(config);
+    done();
+}

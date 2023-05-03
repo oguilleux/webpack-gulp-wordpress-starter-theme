@@ -1,20 +1,19 @@
-var gulp         = require('gulp');
-var plumber      = require('gulp-plumber');
-var notify       = require('gulp-notify');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
 
 // utils
-var pumped       = require('../../utils/pumped');
+import pumped from '../../utils/pumped';
 
 // config
-var config       = require('../../config/fonts');
-
+import config from '../../config/fonts';
 
 /**
  * Move Fonts to
  * the built theme
  *
  */
-module.exports = function () {
+export default function () {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 

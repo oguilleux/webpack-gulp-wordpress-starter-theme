@@ -1,11 +1,11 @@
-var TerserPlugin = require('terser-webpack-plugin');
-var ESLintPlugin = require('eslint-webpack-plugin');
+import TerserPlugin from 'terser-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
 
 // utils
-var deepMerge = require('../utils/deepMerge');
+import deepMerge from '../utils/deepMerge';
 
 // config
-var assets = require('./common').paths.assets;
+import { paths as assets } from './common';
 
 /**
  * Script Building
@@ -14,7 +14,7 @@ var assets = require('./common').paths.assets;
  *
  * @type {{}}
  */
-module.exports = deepMerge({
+export default deepMerge({
 	paths: {
 		watch: assets.src + '/js/**/*.js',
 		src: [

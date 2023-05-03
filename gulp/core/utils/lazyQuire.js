@@ -7,8 +7,8 @@
  * @param path
  * @returns {Function}
  */
-module.exports = function (require, path) {
-	var worker = '';
+export default function (require, path) {
+	let worker = '';
 
 	return function (a, b, c, d, e, f, g) {
 		if (!worker) {
@@ -17,4 +17,4 @@ module.exports = function (require, path) {
 
 		return worker(a, b, c, d, e, f, g);
 	};
-};
+}

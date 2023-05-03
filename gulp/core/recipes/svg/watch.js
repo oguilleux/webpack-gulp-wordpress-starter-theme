@@ -1,8 +1,5 @@
-var gulp   = require('gulp');
-
-// config
-var config = require('../../config/svg');
-
+import gulp from 'gulp';
+import config from '../../config/svg';
 
 /**
  * Watch svg files
@@ -10,9 +7,7 @@ var config = require('../../config/svg');
  *
  * @param done
  */
-module.exports = function (done) {
-
+export default function watchSvg(done) {
 	gulp.watch(config.paths.watch, gulp.parallel('svg:dev'));
-
 	done();
 };

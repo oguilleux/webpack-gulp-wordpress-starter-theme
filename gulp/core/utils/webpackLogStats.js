@@ -1,6 +1,6 @@
-var log 	 	= require('fancy-log');
-var callingDone = false;
-var defaultStatsOptions = {
+import log from 'fancy-log';
+
+const defaultStatsOptions = {
 	hash: false,
 	timings: false,
 	chunks: false,
@@ -22,9 +22,8 @@ var defaultStatsOptions = {
  * @param stats
  * @param options
  */
-module.exports = function (err, stats, options) {
+export default function (err, stats, options = {}) {
 	stats = stats || {};
-	options = options || {};
 
 	if (options.quiet || callingDone) {
 		return;
@@ -33,7 +32,7 @@ module.exports = function (err, stats, options) {
 	// Debounce output a little for when in watch mode
 	if (options.watch) {
 		callingDone = true;
-		setTimeout(function () {
+		setTimeout(() => {
 			callingDone = false;
 		}, 500);
 	}
@@ -41,9 +40,9 @@ module.exports = function (err, stats, options) {
 	if (options.verbose) {
 		log(stats.toString());
 	} else {
-		var statsOptions = options && options.stats || {};
+		const statsOptions = options.stats || {};
 
-		Object.keys(defaultStatsOptions).forEach(function (key) {
+		Object.keys(defaultStatsOptions).forEach((key) => {
 			if (typeof statsOptions[key] === 'undefined') {
 				statsOptions[key] = defaultStatsOptions[key];
 			}

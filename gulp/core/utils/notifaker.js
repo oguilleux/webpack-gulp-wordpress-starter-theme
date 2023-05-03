@@ -1,6 +1,6 @@
-var notifier = require('node-notifier');
-var log 	 = require('fancy-log');
-var c 		 = require('ansi-colors');
+import notifier from 'node-notifier';
+import log from 'fancy-log';
+import c from 'ansi-colors';
 
 /**
  * Fake the gulp-notfy functionality
@@ -9,7 +9,7 @@ var c 		 = require('ansi-colors');
  *
  * @param message
  */
-module.exports = function (message) {
+export default function (message) {
 
 	log(
 		c.cyan('gulp-notifier'),

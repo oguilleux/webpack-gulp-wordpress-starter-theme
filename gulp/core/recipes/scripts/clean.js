@@ -1,8 +1,7 @@
-var del = require('del');
+import del from 'del';
 
 // config
-var config = require('../../config/scripts');
-
+import config from '../../config/scripts';
 
 /**
  * Delete all JS files
@@ -10,7 +9,7 @@ var config = require('../../config/scripts');
  * asset directory
  *
  */
-module.exports = function (done) {
+export default function (done) {
 	del(config.paths.clean, { force: true })
 		.then(function () { done(); });
 };

@@ -1,6 +1,6 @@
-var log 	 = require('fancy-log');
-var path  	 = require('path');
-var c 		 = require('ansi-colors');
+import log from 'fancy-log';
+import path from 'path';
+import c from 'ansi-colors';
 
 /**
  * Validate the options passed
@@ -8,9 +8,8 @@ var c 		 = require('ansi-colors');
  *
  * @param project
  */
-module.exports = function (project) {
-	var validationFailed = false;
-
+export default function validateProjectOptions(project) {
+	let validationFailed = false;
 
 	/**
 	 * Safely handle missing
@@ -28,26 +27,24 @@ module.exports = function (project) {
 		log('Project Config Error:', c.red('The \"prettyName\" option in your project.config.js configuration cannot be empty'));
 	}
 
-
 	/**
 	 * Safely handle misconfigured
 	 * project name
 	 */
-	var devThemeRoot = path.basename(path.resolve('./'));
+	const devThemeRoot = path.basename(path.resolve('./'));
 	if (project.name === devThemeRoot) {
 		validationFailed = true;
 
 		log('Project Config Error:', c.red(
-			'The \"name\" value in your project.config.js configuration \'' + project.name + '\' ' +
-			'cannot be the same as the directory name of the development theme \'' + devThemeRoot + '\'.'
+			`The \"name\" value in your project.config.js configuration '${project.name}' ` +
+			`cannot be the same as the directory name of the development theme '${devThemeRoot}'.`
 		));
 
 		log(
-			'Please either rename the development theme directory (to \'' + project.name + '_dev\' for example) ' +
-			'or change the name value in your project.config.js to something else.'
+			`Please either rename the development theme directory (to '${project.name}_dev' for example) ` +
+			`or change the name value in your project.config.js to something else.`
 		);
 	}
-
 
 	/**
 	 * Exit the gulp process
@@ -58,4 +55,4 @@ module.exports = function (project) {
 		// do not continue further
 		process.exit(1);
 	}
-};
+}

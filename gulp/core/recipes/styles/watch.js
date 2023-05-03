@@ -1,18 +1,7 @@
-var gulp   = require('gulp');
+import gulp from 'gulp';
+import config from '../../config/styles';
 
-// config
-var config = require('../../config/styles');
-
-
-/**
- * Watch style files
- * for changes
- *
- * @param done
- */
-module.exports = function (done) {
-
+export default function (done) {
 	gulp.watch(config.paths.watch, gulp.parallel('styles:dev'));
-
 	done();
-};
+}

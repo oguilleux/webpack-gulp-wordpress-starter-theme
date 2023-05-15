@@ -1,6 +1,6 @@
 var gulp         = require('gulp');
 var plumber      = require('gulp-plumber');
-var squoosh 	 = require('gulp-squoosh');
+// var squoosh 	 = require('gulp-squoosh');
 var notify       = require('gulp-notify');
 var path 		 = require('path');
 

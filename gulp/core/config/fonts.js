@@ -2,7 +2,8 @@
 import deepMerge from '../utils/deepMerge';
 
 // config
-import { paths as assets } from './common';
+import common from './common';
+const assets = common.paths.assets;
 
 /**
  * Font Building

@@ -26,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/eslint-parser": "7.21.3",
+    "@babel/plugin-transform-modules-commonjs": "7.21.5",
     "@babel/plugin-transform-runtime": "7.21.4",
     "@babel/preset-env": "7.21.4",
     "@babel/register": "^7.21.0",
@@ -51,6 +52,7 @@
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "9.0.1",
     "gulp-sass": "5.1.0",
+    "gulp-sharp-optimize-images": "^2.0.2",
     "gulp-sourcemaps": "3.0.0",
     "gulp-svg-sprite": "2.0.3",
     "gulp-svgmin": "4.1.0",

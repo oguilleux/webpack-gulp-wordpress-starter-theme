@@ -21,15 +21,15 @@ module.exports = function () {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 
-		.pipe(
-			squoosh(({ width, height, size, filePath }) => ({
-				encodeOptions: {
-					...(path.extname(filePath) === ".png"
-						? { oxipng: {} }
-						: { mozjpeg: {} }),
-				},
-			}))
-		)
+		// .pipe(
+		// 	squoosh(({ width, height, size, filePath }) => ({
+		// 		encodeOptions: {
+		// 			...(path.extname(filePath) === ".png"
+		// 				? { oxipng: {} }
+		// 				: { mozjpeg: {} }),
+		// 		},
+		// 	}))
+		// )
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({

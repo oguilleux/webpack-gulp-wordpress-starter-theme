@@ -1,6 +1,5 @@
 var gulp         = require('gulp');
 var plumber      = require('gulp-plumber');
-// var squoosh 	 = require('gulp-squoosh');
 var notify       = require('gulp-notify');
 var path 		 = require('path');
 
@@ -21,15 +20,7 @@ module.exports = function () {
 	return gulp.src(config.paths.src)
 		.pipe(plumber())
 
-		// .pipe(
-		// 	squoosh(({ width, height, size, filePath }) => ({
-		// 		encodeOptions: {
-		// 			...(path.extname(filePath) === ".png"
-		// 				? { oxipng: {} }
-		// 				: { mozjpeg: {} }),
-		// 		},
-		// 	}))
-		// )
+		// TODO find new image compression lib
 
 		.pipe(gulp.dest(config.paths.dest))
 		.pipe(notify({

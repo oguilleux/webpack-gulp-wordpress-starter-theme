@@ -15,7 +15,7 @@ var config       = require('../../config/fonts');
  *
  */
 module.exports = function () {
-	return gulp.src(config.paths.src)
+	return gulp.src(config.paths.src, {encoding: false})
 		.pipe(plumber())
 
 		.pipe(gulp.dest(config.paths.dest))
